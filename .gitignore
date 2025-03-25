@@ -1,4 +1,14 @@
-*__pycache__*
-# 忽略整个 dataset 目录
+# 忽略 Python 编译缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 忽略 dataset 整个目录
 dataset/
-dataset/
+
+# 忽略 Jupyter notebook 的临时文件
+.ipynb_checkpoints/
+
+# 忽略 VSCode 或 PyCharm 工程文件（可选）
+.idea/
+.vscode/
