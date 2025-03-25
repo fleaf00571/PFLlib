@@ -1,1 +1,4 @@
 *__pycache__*
+# 忽略整个 dataset 目录
+dataset/
+dataset/
