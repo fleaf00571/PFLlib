@@ -69,12 +69,28 @@ class clientSCAFFOLD(Client):
     def update_yc(self, max_local_epochs=None):
         if max_local_epochs is None:
             max_local_epochs = self.local_epochs
+    
+        # 防止除零错误
+        if self.num_batches == 0 or max_local_epochs == 0:
+            return  # 跳过更新
+    
         for ci, c, x, yi in zip(self.client_c, self.global_c, self.global_model.parameters(), self.model.parameters()):
             ci.data = ci - c + 1/self.num_batches/max_local_epochs/self.learning_rate * (x - yi)
 
     def delta_yc(self, max_local_epochs=None):
         if max_local_epochs is None:
             max_local_epochs = self.local_epochs
+        
+        # 防止除零错误
+        if self.num_batches == 0 or max_local_epochs == 0:
+            # 返回零向量避免计算错误
+            delta_y = []
+            delta_c = []
+            for c, x, yi in zip(self.global_c, self.global_model.parameters(), self.model.parameters()):
+                delta_y.append(torch.zeros_like(yi))
+                delta_c.append(torch.zeros_like(c))
+            return delta_y, delta_c
+    
         delta_y = []
         delta_c = []
         for c, x, yi in zip(self.global_c, self.global_model.parameters(), self.model.parameters()):
