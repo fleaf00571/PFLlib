@@ -6,7 +6,6 @@ import torch
 import torchvision
 import torchvision.transforms as transforms
 from utils.dataset_utils import check, separate_data, split_data, save_file
-import shutil # 新增导入，用于移动文件夹
 
 
 random.seed(1)
@@ -77,27 +76,3 @@ if __name__ == "__main__":
     partition = sys.argv[3] if sys.argv[3] != "-" else None
 
     generate_dataset(dir_path, num_clients, niid, balance, partition)
-
-    # 新增代码段：若指定了目标路径，则自动移动生成的数据集
-    if len(sys.argv) > 1 and sys.argv[1] != "-":
-        target_dir = sys.argv[1]
-
-        # 确保目标目录存在
-        os.makedirs(target_dir, exist_ok=True)
-
-        # 仅删除目标目录下可能存在冲突的文件/目录 (更安全!)
-        for folder in ['train', 'test', 'config.json']:
-            target_item = os.path.join(target_dir, folder)
-            if os.path.exists(target_item):
-                if os.path.isfile(target_item):
-                    os.remove(target_item)
-                else:
-                    shutil.rmtree(target_item)
-
-        # 移动生成的文件到目标位置 (注意排除 rawdata)
-        for folder in ['train', 'test', 'config.json']:
-            src = os.path.join(dir_path, folder)
-            dst = os.path.join(target_dir, folder)
-            shutil.move(src, dst)
-
-        print(f"已将生成数据移动到 {target_dir}")

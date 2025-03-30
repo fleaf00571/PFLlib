@@ -65,7 +65,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # 设置你的结果文件夹路径（例如：'./results/'）
-RESULT_DIR = 'results'  # 修改为你的路径，例如 '/mnt/data/'
+RESULT_DIR = 'results/'  # 修改为你的路径，例如 '/mnt/data/'
 
 # 自动读取所有 h5 文件
 def load_all_results(result_dir):

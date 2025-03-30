@@ -3,12 +3,18 @@ __pycache__/
 *.pyc
 *.pyo
 
-# 忽略 dataset 整个目录
-dataset/
-
 # 忽略 Jupyter notebook 的临时文件
 .ipynb_checkpoints/
 
-# 忽略 VSCode 或 PyCharm 工程文件（可选）
-.idea/
-.vscode/
+# 忽略 dataset 下的所有内容...
+dataset/*
+
+# ...但保留 dataset 文件夹本身
+!dataset/
+
+# ...保留 dataset 目录下的所有文件（非文件夹）
+!dataset/*.*
+
+# ...保留 dataset/utils 目录及其内容
+!dataset/utils/
+!dataset/utils/**
