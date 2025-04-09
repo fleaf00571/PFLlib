@@ -72,7 +72,7 @@ def load_all_results(result_dir):
     results = {}
     for filename in os.listdir(result_dir):
         if filename.endswith('.h5'):
-            method_name = filename.replace('.h5', '').split('_')[1]  # 提取方法名（如 FedAvg）
+            method_name = filename
             file_path = os.path.join(result_dir, filename)
             with h5py.File(file_path, 'r') as f:
                 data = {key: np.array(f[key]) for key in f.keys()}

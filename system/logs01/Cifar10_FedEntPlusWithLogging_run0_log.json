@@ -1,0 +1,832 @@
+{
+    "training_start": {
+        "start_time": "2025-04-06 13:41:02",
+        "num_clients": 100,
+        "global_rounds": 2,
+        "clients_per_round": 10,
+        "random_join": false,
+        "H_min": 1.0,
+        "alpha_vp": 0.1,
+        "beta": 0.05,
+        "dp_epsilon": 0.0,
+        "buffer_size": 50
+    }
+,
+  "rounds": [
+{
+    "round": 1,
+    "selected_clients": [
+        69,
+        67,
+        44,
+        48,
+        35,
+        65,
+        87,
+        20,
+        17,
+        85
+    ],
+    "clients": {
+        "69": {
+            "raw_label_distribution": [
+                34,
+                26,
+                32,
+                3,
+                0,
+                0,
+                0,
+                0,
+                261,
+                0
+            ],
+            "dp_label_distribution": [
+                34.0,
+                26.0,
+                32.0,
+                3.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                261.0,
+                0.0
+            ],
+            "local_entropy": 1.2981392683790853,
+            "train_samples": 356
+        },
+        "67": {
+            "raw_label_distribution": [
+                0,
+                11,
+                4,
+                210,
+                7,
+                213,
+                109,
+                0,
+                0,
+                0
+            ],
+            "dp_label_distribution": [
+                0.0,
+                11.0,
+                4.0,
+                210.0,
+                7.0,
+                213.0,
+                109.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "local_entropy": 1.765507452189824,
+            "train_samples": 554
+        },
+        "44": {
+            "raw_label_distribution": [
+                23,
+                0,
+                107,
+                3,
+                143,
+                0,
+                0,
+                157,
+                0,
+                5
+            ],
+            "dp_label_distribution": [
+                23.0,
+                0.0,
+                107.0,
+                3.0,
+                143.0,
+                0.0,
+                0.0,
+                157.0,
+                0.0,
+                5.0
+            ],
+            "local_entropy": 1.9006763763908323,
+            "train_samples": 438
+        },
+        "48": {
+            "raw_label_distribution": [
+                13,
+                0,
+                0,
+                0,
+                181,
+                0,
+                115,
+                0,
+                0,
+                186
+            ],
+            "dp_label_distribution": [
+                13.0,
+                0.0,
+                0.0,
+                0.0,
+                181.0,
+                0.0,
+                115.0,
+                0.0,
+                0.0,
+                186.0
+            ],
+            "local_entropy": 1.6884711460324442,
+            "train_samples": 495
+        },
+        "35": {
+            "raw_label_distribution": [
+                135,
+                153,
+                0,
+                0,
+                0,
+                0,
+                0,
+                165,
+                0,
+                0
+            ],
+            "dp_label_distribution": [
+                135.0,
+                153.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                165.0,
+                0.0,
+                0.0
+            ],
+            "local_entropy": 1.580114235886417,
+            "train_samples": 453
+        },
+        "65": {
+            "raw_label_distribution": [
+                0,
+                119,
+                88,
+                221,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "dp_label_distribution": [
+                0.0,
+                119.0,
+                88.0,
+                221.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "local_entropy": 1.495323903002497,
+            "train_samples": 429
+        },
+        "87": {
+            "raw_label_distribution": [
+                57,
+                0,
+                53,
+                0,
+                2,
+                277,
+                58,
+                0,
+                0,
+                0
+            ],
+            "dp_label_distribution": [
+                57.0,
+                0.0,
+                53.0,
+                0.0,
+                2.0,
+                277.0,
+                58.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "local_entropy": 1.5886411048247848,
+            "train_samples": 447
+        },
+        "20": {
+            "raw_label_distribution": [
+                0,
+                0,
+                1,
+                2,
+                0,
+                0,
+                38,
+                16,
+                95,
+                201
+            ],
+            "dp_label_distribution": [
+                0.0,
+                0.0,
+                1.0,
+                2.0,
+                0.0,
+                0.0,
+                38.0,
+                16.0,
+                95.0,
+                201.0
+            ],
+            "local_entropy": 1.5869835284290814,
+            "train_samples": 353
+        },
+        "17": {
+            "raw_label_distribution": [
+                24,
+                0,
+                336,
+                0,
+                0,
+                0,
+                48,
+                2,
+                244,
+                0
+            ],
+            "dp_label_distribution": [
+                24.0,
+                0.0,
+                336.0,
+                0.0,
+                0.0,
+                0.0,
+                48.0,
+                2.0,
+                244.0,
+                0.0
+            ],
+            "local_entropy": 1.501410029670971,
+            "train_samples": 654
+        },
+        "85": {
+            "raw_label_distribution": [
+                0,
+                130,
+                0,
+                0,
+                225,
+                0,
+                190,
+                0,
+                0,
+                0
+            ],
+            "dp_label_distribution": [
+                0.0,
+                130.0,
+                0.0,
+                0.0,
+                225.0,
+                0.0,
+                190.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "local_entropy": 1.5501470081038988,
+            "train_samples": 545
+        }
+    },
+    "global_label_distribution": [
+        286.0,
+        439.0,
+        621.0,
+        439.0,
+        559.0,
+        490.0,
+        558.0,
+        340.0,
+        600.0,
+        392.0
+    ],
+    "global_entropy": 3.2836335310410227,
+    "selection_metrics": [
+        {
+            "client_id": 69,
+            "entropy_gain": 1.2981392683790853,
+            "entropy_var_penalty": 0.0,
+            "data_factor": 0.7916740793453122,
+            "score": 1.3377229723463508
+        },
+        {
+            "client_id": 67,
+            "entropy_gain": 1.169501982796269,
+            "entropy_var_penalty": 0.00546082548096371,
+            "data_factor": 1.2319871908913005,
+            "score": 2.5237797852389554
+        },
+        {
+            "client_id": 44,
+            "entropy_gain": 0.5507451218458121,
+            "entropy_var_penalty": 0.006663940264881845,
+            "data_factor": 0.974025974025974,
+            "score": 3.060423731457583
+        },
+        {
+            "client_id": 48,
+            "entropy_gain": 0.13787346200250017,
+            "entropy_var_penalty": 0.005019245317559956,
+            "data_factor": 1.1007827788649707,
+            "score": 3.2062797286493554
+        },
+        {
+            "client_id": 35,
+            "entropy_gain": 0.12378251111073801,
+            "entropy_var_penalty": 0.004125844334651368,
+            "data_factor": 1.0073830279309732,
+            "score": 3.326285653196302
+        },
+        {
+            "client_id": 65,
+            "entropy_gain": -0.007103399152882162,
+            "entropy_var_penalty": 0.0037559663882459657,
+            "data_factor": 0.9540117416829745,
+            "score": 3.3168835676774253
+        },
+        {
+            "client_id": 87,
+            "entropy_gain": 0.001397347901875623,
+            "entropy_var_penalty": 0.003232517912358727,
+            "data_factor": 0.9940402063689735,
+            "score": 3.320805787289488
+        },
+        {
+            "client_id": 20,
+            "entropy_gain": 0.02274802830763445,
+            "entropy_var_penalty": 0.0028381092750571625,
+            "data_factor": 0.7850026685643123,
+            "score": 3.333496347344191
+        },
+        {
+            "client_id": 17,
+            "entropy_gain": -0.024861415179964652,
+            "entropy_var_penalty": 0.0026457102976139707,
+            "data_factor": 1.4543675502579612,
+            "score": 3.342295575226352
+        },
+        {
+            "client_id": 85,
+            "entropy_gain": 0.01141062302995488,
+            "entropy_var_penalty": 0.0024040353933634496,
+            "data_factor": 1.211972958548301,
+            "score": 3.341828143575074
+        }
+    ],
+    "buffer": [
+        69,
+        67,
+        44,
+        48,
+        35,
+        65,
+        87,
+        20,
+        17,
+        85
+    ],
+    "performance": {
+        "test_accuracy": 0.150345928685471,
+        "test_auc": 0.5272946923321066,
+        "train_loss": 2.299935540538624
+    },
+    "round_time": 4.3093342781066895
+},
+{
+    "round": 2,
+    "selected_clients": [
+        71,
+        50,
+        10,
+        31,
+        6,
+        9,
+        89,
+        24,
+        82,
+        99
+    ],
+    "clients": {
+        "71": {
+            "raw_label_distribution": [
+                0,
+                48,
+                0,
+                0,
+                233,
+                0,
+                0,
+                0,
+                48,
+                106
+            ],
+            "dp_label_distribution": [
+                0.0,
+                48.0,
+                0.0,
+                0.0,
+                233.0,
+                0.0,
+                0.0,
+                0.0,
+                48.0,
+                106.0
+            ],
+            "local_entropy": 1.6805696597995907,
+            "train_samples": 435
+        },
+        "50": {
+            "raw_label_distribution": [
+                299,
+                0,
+                5,
+                26,
+                0,
+                53,
+                18,
+                0,
+                148,
+                0
+            ],
+            "dp_label_distribution": [
+                299.0,
+                0.0,
+                5.0,
+                26.0,
+                0.0,
+                53.0,
+                18.0,
+                0.0,
+                148.0,
+                0.0
+            ],
+            "local_entropy": 1.7446785394382873,
+            "train_samples": 549
+        },
+        "10": {
+            "raw_label_distribution": [
+                0,
+                0,
+                79,
+                307,
+                0,
+                0,
+                0,
+                64,
+                0,
+                0
+            ],
+            "dp_label_distribution": [
+                0.0,
+                0.0,
+                79.0,
+                307.0,
+                0.0,
+                0.0,
+                0.0,
+                64.0,
+                0.0,
+                0.0
+            ],
+            "local_entropy": 1.2171994209178454,
+            "train_samples": 450
+        },
+        "31": {
+            "raw_label_distribution": [
+                0,
+                0,
+                140,
+                0,
+                0,
+                3,
+                222,
+                5,
+                101,
+                0
+            ],
+            "dp_label_distribution": [
+                0.0,
+                0.0,
+                140.0,
+                0.0,
+                0.0,
+                3.0,
+                222.0,
+                5.0,
+                101.0,
+                0.0
+            ],
+            "local_entropy": 1.624161100065967,
+            "train_samples": 471
+        },
+        "6": {
+            "raw_label_distribution": [
+                0,
+                356,
+                0,
+                0,
+                7,
+                409,
+                0,
+                0,
+                0,
+                0
+            ],
+            "dp_label_distribution": [
+                0.0,
+                356.0,
+                0.0,
+                0.0,
+                7.0,
+                409.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "local_entropy": 1.0620438088333446,
+            "train_samples": 772
+        },
+        "9": {
+            "raw_label_distribution": [
+                44,
+                0,
+                0,
+                0,
+                226,
+                0,
+                0,
+                161,
+                1,
+                0
+            ],
+            "dp_label_distribution": [
+                44.0,
+                0.0,
+                0.0,
+                0.0,
+                226.0,
+                0.0,
+                0.0,
+                161.0,
+                1.0,
+                0.0
+            ],
+            "local_entropy": 1.375598025074749,
+            "train_samples": 432
+        },
+        "89": {
+            "raw_label_distribution": [
+                0,
+                1,
+                0,
+                0,
+                109,
+                0,
+                34,
+                0,
+                33,
+                504
+            ],
+            "dp_label_distribution": [
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                109.0,
+                0.0,
+                34.0,
+                0.0,
+                33.0,
+                504.0
+            ],
+            "local_entropy": 1.1857842400150325,
+            "train_samples": 681
+        },
+        "24": {
+            "raw_label_distribution": [
+                23,
+                0,
+                0,
+                0,
+                6,
+                0,
+                356,
+                185,
+                0,
+                0
+            ],
+            "dp_label_distribution": [
+                23.0,
+                0.0,
+                0.0,
+                0.0,
+                6.0,
+                0.0,
+                356.0,
+                185.0,
+                0.0,
+                0.0
+            ],
+            "local_entropy": 1.2070665799061504,
+            "train_samples": 570
+        },
+        "82": {
+            "raw_label_distribution": [
+                0,
+                0,
+                192,
+                215,
+                0,
+                0,
+                1,
+                0,
+                0,
+                28
+            ],
+            "dp_label_distribution": [
+                0.0,
+                0.0,
+                192.0,
+                215.0,
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                0.0,
+                28.0
+            ],
+            "local_entropy": 1.2985049655617684,
+            "train_samples": 436
+        },
+        "99": {
+            "raw_label_distribution": [
+                13,
+                9,
+                1,
+                0,
+                3,
+                26,
+                1,
+                201,
+                516,
+                0
+            ],
+            "dp_label_distribution": [
+                13.0,
+                9.0,
+                1.0,
+                0.0,
+                3.0,
+                26.0,
+                1.0,
+                201.0,
+                516.0,
+                0.0
+            ],
+            "local_entropy": 1.2883821482471849,
+            "train_samples": 770
+        }
+    },
+    "global_label_distribution": [
+        379.0,
+        414.0,
+        417.0,
+        548.0,
+        584.0,
+        491.0,
+        632.0,
+        616.0,
+        847.0,
+        638.0
+    ],
+    "global_entropy": 3.281802778756122,
+    "selection_metrics": [
+        {
+            "client_id": 71,
+            "entropy_gain": 1.6805696597995907,
+            "entropy_var_penalty": 0.0,
+            "data_factor": 0.9673545632449742,
+            "score": 1.7289373879618395
+        },
+        {
+            "client_id": 50,
+            "entropy_gain": 0.8660990353582543,
+            "entropy_var_penalty": 0.00010274871121322221,
+            "data_factor": 1.2208681729229673,
+            "score": 2.60760935509278
+        },
+        {
+            "client_id": 10,
+            "entropy_gain": 0.3694403458867841,
+            "entropy_var_penalty": 0.005522846080055079,
+            "data_factor": 1.0007116171499733,
+            "score": 2.960621775822073
+        },
+        {
+            "client_id": 31,
+            "entropy_gain": 0.16017137295788153,
+            "entropy_var_penalty": 0.004252377089400615,
+            "data_factor": 1.047411492616972,
+            "score": 3.1243986115439584
+        },
+        {
+            "client_id": 6,
+            "entropy_gain": 0.09716326957410626,
+            "entropy_var_penalty": 0.007475975404438869,
+            "data_factor": 1.7167763743106208,
+            "score": 3.251806526887709
+        },
+        {
+            "client_id": 9,
+            "entropy_gain": 0.05260255605776987,
+            "entropy_var_penalty": 0.006342810949305612,
+            "data_factor": 0.9606831524639744,
+            "score": 3.26773758630828
+        },
+        {
+            "client_id": 89,
+            "entropy_gain": 0.016609604187154403,
+            "entropy_var_penalty": 0.006296101109461657,
+            "data_factor": 1.5144102472869596,
+            "score": 3.3120802550764274
+        },
+        {
+            "client_id": 24,
+            "entropy_gain": 0.016748016159217283,
+            "entropy_var_penalty": 0.0059723113010665295,
+            "data_factor": 1.2675680483899663,
+            "score": 3.31680995109919
+        },
+        {
+            "client_id": 82,
+            "entropy_gain": 0.027649175407826743,
+            "entropy_var_penalty": 0.00538630887608263,
+            "data_factor": 0.9695783668386408,
+            "score": 3.3301456448544347
+        },
+        {
+            "client_id": 99,
+            "entropy_gain": -0.005250256632463035,
+            "entropy_var_penalty": 0.004918818792531225,
+            "data_factor": 1.7123287671232876,
+            "score": 3.3625003983197557
+        }
+    ],
+    "buffer": [
+        69,
+        67,
+        44,
+        48,
+        35,
+        65,
+        87,
+        20,
+        17,
+        85,
+        71,
+        50,
+        10,
+        31,
+        6,
+        9,
+        89,
+        24,
+        82,
+        99
+    ],
+    "performance": {
+        "test_accuracy": 0.1295902075572113,
+        "test_auc": 0.5248642433509112,
+        "train_loss": 2.3111887914271443
+    },
+    "round_time": 3.675344467163086
+}
+],
+
+    "training_end": {
+        "end_time": "2025-04-06 13:41:17",
+        "total_time": 13.89668345451355
+    }
+}

@@ -50,6 +50,10 @@ from flcore.servers.serverlc import FedLC
 from flcore.servers.serveras import FedAS
 # 新增导入：FedEntOpt
 from flcore.servers.serverfedentopt import FedEntOpt
+from flcore.servers.serverfedentplus import FedEntPlus
+from flcore.servers.serverfedentplus_with_logging import FedEntPlusWithLogging 
+from flcore.servers.serverfedentplus_dynamic import FedEntPlusDynamic
+from flcore.servers.serverfedentplus_smooth import FedEntPlusSmooth
 
 from flcore.trainmodel.models import *
 from flcore.trainmodel.bilstm import *
@@ -57,6 +61,7 @@ from flcore.trainmodel.resnet import *
 from flcore.trainmodel.alexnet import *
 from flcore.trainmodel.mobilenet_v2 import *
 from flcore.trainmodel.transformer import *
+from flcore.trainmodel.lenet5 import LeNet5
 
 from utils.result_utils import average_data
 from utils.mem_utils import MemReporter
@@ -149,6 +154,10 @@ def run(args):
 
         elif model_str == "AmazonMLP":
             args.model = AmazonMLP().to(args.device)
+
+        elif model_str == "LeNet5":
+            args.model = LeNet5(num_classes=args.num_classes).to(args.device)
+
 
         elif model_str == "HARCNN":
             if args.dataset == 'HAR':
@@ -349,6 +358,25 @@ def run(args):
                 args.algorithm = "FedEntOptDP"
             server = FedEntOpt(args, i)
 
+        elif args.algorithm == "FedEntPlus":
+            # 实例化 FedEntPlus 服务器，注意传入参数和随机种子编号
+            server = FedEntPlus(args, i)
+
+        elif args.algorithm == "FedEntPlusWithLogging":
+            server = FedEntPlusWithLogging(args, i)
+
+        # 在算法选择逻辑中添加 FedEntPlusDynamic 分支
+        elif args.algorithm == "FedEntPlusDynamic" or args.algorithm == "fedentplus_dynamic":
+            server = FedEntPlusDynamic(args, i, log_filename=args.log_filename)
+
+        elif args.algorithm == "FedEntPlusSmooth" or args.algorithm == "fedentplus_smooth":
+            # 确保 args.model 保持不变，因为 Smooth 类内部会处理
+            # 它的父类 FedEntPlus 会进行必要的客户端和模型初始化
+            args.algorithm = "FedEntPlusSmooth" # 统一名称以便保存结果
+            server = FedEntPlusSmooth(args, i)
+
+
+
 
         else:
             raise NotImplementedError
@@ -496,6 +524,30 @@ if __name__ == "__main__":
     # ========== 新增：Laplace DP epsilon，用于 FedEntOpt ======
     parser.add_argument('--dp_epsilon', type=float, default=0.0,
                     help="Laplace DP epsilon for FedEntOpt. If 0 => no DP.")
+    
+    # FedEntPlus 相关超参数
+    parser.add_argument('--H_min', type=float, default=None,
+                    help="Minimal local entropy threshold for FedEntPlus. If None => no threshold filtering.")
+    parser.add_argument('--alpha_vp', type=float, default=0.0,
+                    help="Entropy variance penalty factor for FedEntPlus scoring.")
+    
+    # 添加 FedEntPlusDynamic 所需的命令行参数
+    # parser.add_argument('--beta', type=float, default=0.0,
+    #                 help="Data volume weight factor (β) for FedEntPlus selection scoring.")
+    parser.add_argument('--enable_dynamic_param', action='store_true', default=False,
+                    help="Enable dynamic parameter adjustment for FedEntPlusDynamic.")
+    parser.add_argument('--log_fedent', action='store_true', default=False,
+                    help="Enable detailed logging for FedEntPlus/FedEntPlusDynamic.")
+    # 在parser中添加对log_filename的支持
+    parser.add_argument('--log_filename', type=str, default=None, help="Filename for log output")
+    # fedentplussmoth
+    parser.add_argument('--dynamic_config_path', type=str, default="fedentplus_smooth_config.json",
+                        help="Path to the JSON config file for FedEntPlusSmooth dynamic parameters.")
+    
+
+
+
+
 
     args = parser.parse_args()
 
