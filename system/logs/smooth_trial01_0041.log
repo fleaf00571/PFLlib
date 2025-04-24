@@ -1,0 +1,3621 @@
+==================================================
+goal = smooth_trial01_0041
+device = cuda
+device_id = 0
+dataset = Cifar10
+num_classes = 10
+model = CNN
+batch_size = 64
+local_learning_rate = 0.01
+learning_rate_decay = True
+learning_rate_decay_gamma = 0.98
+global_rounds = 500
+top_cnt = 100
+local_epochs = 5
+algorithm = FedEntPlusSmooth
+join_ratio = 0.1
+random_join_ratio = False
+num_clients = 100
+prev = 0
+times = 1
+eval_gap = 1
+save_folder_name = items
+auto_break = False
+dlg_eval = False
+dlg_gap = 100
+batch_num_per_client = 2
+num_new_clients = 0
+fine_tuning_epoch_new = 0
+feature_dim = 512
+vocab_size = 32000
+max_len = 200
+client_drop_rate = 0.0
+train_slow_rate = 0.0
+send_slow_rate = 0.0
+time_select = False
+time_threthold = 10000
+beta = 0.0
+lamda = 1.0
+mu = 0.0
+K = 5
+p_learning_rate = 0.01
+M = 5
+itk = 4000
+alphaK = 1.0
+sigma = 1.0
+alpha = 1.0
+plocal_epochs = 1
+tau = 1.0
+fine_tuning_epochs = 10
+dr_learning_rate = 0.0
+L = 1.0
+noise_dim = 512
+generator_learning_rate = 0.005
+hidden_dim = 512
+server_epochs = 1000
+localize_feature_extractor = False
+server_learning_rate = 1.0
+eta = 1.0
+rand_percent = 80
+layer_idx = 2
+mentee_learning_rate = 0.005
+T_start = 0.95
+T_end = 0.98
+momentum = 0.9
+kl_weight = 0.0
+buffer_size = 0
+dp_epsilon = 0.0
+H_min = None
+alpha_vp = 0.0
+enable_dynamic_param = False
+log_fedent = False
+log_filename = None
+dynamic_config_path = /home/john/PFLlib/system/auto_configs/smooth_trial01_0041.json
+==================================================
+
+============= Running time: 0th =============
+Creating server and clients ...
+FedAvgCNN(
+  (conv1): Sequential(
+    (0): Conv2d(3, 32, kernel_size=(5, 5), stride=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (conv2): Sequential(
+    (0): Conv2d(32, 64, kernel_size=(5, 5), stride=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): MaxPool2d(kernel_size=(2, 2), stride=(2, 2), padding=0, dilation=1, ceil_mode=False)
+  )
+  (fc1): Sequential(
+    (0): Linear(in_features=1600, out_features=512, bias=True)
+    (1): ReLU(inplace=True)
+  )
+  (fc): Linear(in_features=512, out_features=10, bias=True)
+)
+
+Join ratio / total clients: 0.1 / 100
+Finished creating server and clients.
+
+--- Round 0/500 ---
+Averaged Train Loss: 2.3038
+Averaged Test Accuracy: 0.0928
+Averaged Test AUC: 0.4894
+Std Test Accuracy: 0.1434
+Std Test AUC: 0.2233
+
+--- Round 1/500 ---
+Averaged Train Loss: 2.3079
+Averaged Test Accuracy: 0.0995
+Averaged Test AUC: 0.5018
+Std Test Accuracy: 0.1952
+Std Test AUC: 0.2380
+
+--- Round 2/500 ---
+Averaged Train Loss: 2.3645
+Averaged Test Accuracy: 0.1001
+Averaged Test AUC: 0.5206
+Std Test Accuracy: 0.2264
+Std Test AUC: 0.2608
+
+--- Round 3/500 ---
+Averaged Train Loss: 2.5387
+Averaged Test Accuracy: 0.1080
+Averaged Test AUC: 0.5211
+Std Test Accuracy: 0.2406
+Std Test AUC: 0.2642
+
+--- Round 4/500 ---
+Averaged Train Loss: 2.5915
+Averaged Test Accuracy: 0.1952
+Averaged Test AUC: 0.5427
+Std Test Accuracy: 0.2205
+Std Test AUC: 0.2599
+
+--- Round 5/500 ---
+Averaged Train Loss: 2.5734
+Averaged Test Accuracy: 0.1832
+Averaged Test AUC: 0.5623
+Std Test Accuracy: 0.2138
+Std Test AUC: 0.2600
+
+--- Round 6/500 ---
+Averaged Train Loss: 2.6206
+Averaged Test Accuracy: 0.1891
+Averaged Test AUC: 0.5748
+Std Test Accuracy: 0.2026
+Std Test AUC: 0.2560
+
+--- Round 7/500 ---
+Averaged Train Loss: 2.5745
+Averaged Test Accuracy: 0.2075
+Averaged Test AUC: 0.5925
+Std Test Accuracy: 0.2280
+Std Test AUC: 0.2518
+
+--- Round 8/500 ---
+Averaged Train Loss: 2.3442
+Averaged Test Accuracy: 0.1926
+Averaged Test AUC: 0.6242
+Std Test Accuracy: 0.2323
+Std Test AUC: 0.2277
+
+--- Round 9/500 ---
+Averaged Train Loss: 2.3016
+Averaged Test Accuracy: 0.2153
+Averaged Test AUC: 0.6459
+Std Test Accuracy: 0.2049
+Std Test AUC: 0.2096
+
+--- Round 10/500 ---
+Averaged Train Loss: 2.2348
+Averaged Test Accuracy: 0.2010
+Averaged Test AUC: 0.6683
+Std Test Accuracy: 0.2402
+Std Test AUC: 0.1960
+
+--- Round 11/500 ---
+Averaged Train Loss: 2.2184
+Averaged Test Accuracy: 0.2274
+Averaged Test AUC: 0.6660
+Std Test Accuracy: 0.2249
+Std Test AUC: 0.2158
+
+--- Round 12/500 ---
+Averaged Train Loss: 2.3932
+Averaged Test Accuracy: 0.2044
+Averaged Test AUC: 0.6468
+Std Test Accuracy: 0.2442
+Std Test AUC: 0.2153
+
+--- Round 13/500 ---
+Averaged Train Loss: 2.3086
+Averaged Test Accuracy: 0.1994
+Averaged Test AUC: 0.6615
+Std Test Accuracy: 0.2371
+Std Test AUC: 0.2000
+
+--- Round 14/500 ---
+Averaged Train Loss: 2.2678
+Averaged Test Accuracy: 0.2281
+Averaged Test AUC: 0.6616
+Std Test Accuracy: 0.2387
+Std Test AUC: 0.2240
+
+--- Round 15/500 ---
+Averaged Train Loss: 2.4401
+Averaged Test Accuracy: 0.2339
+Averaged Test AUC: 0.6514
+Std Test Accuracy: 0.2280
+Std Test AUC: 0.2028
+
+--- Round 16/500 ---
+Averaged Train Loss: 2.2229
+Averaged Test Accuracy: 0.2457
+Averaged Test AUC: 0.6848
+Std Test Accuracy: 0.2130
+Std Test AUC: 0.1789
+
+--- Round 17/500 ---
+Averaged Train Loss: 2.4153
+Averaged Test Accuracy: 0.2354
+Averaged Test AUC: 0.6661
+Std Test Accuracy: 0.2201
+Std Test AUC: 0.1845
+
+--- Round 18/500 ---
+Averaged Train Loss: 2.2312
+Averaged Test Accuracy: 0.2144
+Averaged Test AUC: 0.6898
+Std Test Accuracy: 0.2433
+Std Test AUC: 0.1780
+
+--- Round 19/500 ---
+Averaged Train Loss: 2.1159
+Averaged Test Accuracy: 0.2751
+Averaged Test AUC: 0.7004
+Std Test Accuracy: 0.1938
+Std Test AUC: 0.1987
+
+--- Round 20/500 ---
+Averaged Train Loss: 2.1583
+Averaged Test Accuracy: 0.2706
+Averaged Test AUC: 0.6952
+Std Test Accuracy: 0.1859
+Std Test AUC: 0.1997
+
+--- Round 21/500 ---
+Averaged Train Loss: 2.1160
+Averaged Test Accuracy: 0.2549
+Averaged Test AUC: 0.7090
+Std Test Accuracy: 0.2249
+Std Test AUC: 0.1732
+
+--- Round 22/500 ---
+Averaged Train Loss: 2.0937
+Averaged Test Accuracy: 0.2657
+Averaged Test AUC: 0.7194
+Std Test Accuracy: 0.1995
+Std Test AUC: 0.1605
+
+--- Round 23/500 ---
+Averaged Train Loss: 2.0070
+Averaged Test Accuracy: 0.2604
+Averaged Test AUC: 0.7370
+Std Test Accuracy: 0.2319
+Std Test AUC: 0.1493
+
+--- Round 24/500 ---
+Averaged Train Loss: 2.0240
+Averaged Test Accuracy: 0.2687
+Averaged Test AUC: 0.7280
+Std Test Accuracy: 0.2201
+Std Test AUC: 0.1728
+
+--- Round 25/500 ---
+Averaged Train Loss: 2.1118
+Averaged Test Accuracy: 0.2757
+Averaged Test AUC: 0.7180
+Std Test Accuracy: 0.1886
+Std Test AUC: 0.1727
+
+--- Round 26/500 ---
+Averaged Train Loss: 2.0901
+Averaged Test Accuracy: 0.2920
+Averaged Test AUC: 0.7179
+Std Test Accuracy: 0.2114
+Std Test AUC: 0.1858
+
+--- Round 27/500 ---
+Averaged Train Loss: 2.0576
+Averaged Test Accuracy: 0.2664
+Averaged Test AUC: 0.7234
+Std Test Accuracy: 0.2343
+Std Test AUC: 0.1824
+
+--- Round 28/500 ---
+Averaged Train Loss: 2.1940
+Averaged Test Accuracy: 0.2556
+Averaged Test AUC: 0.7084
+Std Test Accuracy: 0.2424
+Std Test AUC: 0.1815
+
+--- Round 29/500 ---
+Averaged Train Loss: 2.1680
+Averaged Test Accuracy: 0.2689
+Averaged Test AUC: 0.7089
+Std Test Accuracy: 0.2268
+Std Test AUC: 0.1871
+
+--- Round 30/500 ---
+Averaged Train Loss: 2.1724
+Averaged Test Accuracy: 0.2575
+Averaged Test AUC: 0.7115
+Std Test Accuracy: 0.2247
+Std Test AUC: 0.1757
+
+--- Round 31/500 ---
+Averaged Train Loss: 2.1343
+Averaged Test Accuracy: 0.2873
+Averaged Test AUC: 0.7189
+Std Test Accuracy: 0.2213
+Std Test AUC: 0.1744
+
+--- Round 32/500 ---
+Averaged Train Loss: 1.9483
+Averaged Test Accuracy: 0.2837
+Averaged Test AUC: 0.7505
+Std Test Accuracy: 0.2049
+Std Test AUC: 0.1391
+
+--- Round 33/500 ---
+Averaged Train Loss: 1.9566
+Averaged Test Accuracy: 0.2920
+Averaged Test AUC: 0.7527
+Std Test Accuracy: 0.2176
+Std Test AUC: 0.1405
+
+--- Round 34/500 ---
+Averaged Train Loss: 1.9942
+Averaged Test Accuracy: 0.2868
+Averaged Test AUC: 0.7497
+Std Test Accuracy: 0.2164
+Std Test AUC: 0.1410
+
+--- Round 35/500 ---
+Averaged Train Loss: 1.9095
+Averaged Test Accuracy: 0.2976
+Averaged Test AUC: 0.7612
+Std Test Accuracy: 0.1843
+Std Test AUC: 0.1296
+
+--- Round 36/500 ---
+Averaged Train Loss: 1.9598
+Averaged Test Accuracy: 0.2987
+Averaged Test AUC: 0.7537
+Std Test Accuracy: 0.2040
+Std Test AUC: 0.1413
+
+--- Round 37/500 ---
+Averaged Train Loss: 1.9669
+Averaged Test Accuracy: 0.2945
+Averaged Test AUC: 0.7521
+Std Test Accuracy: 0.2210
+Std Test AUC: 0.1523
+
+--- Round 38/500 ---
+Averaged Train Loss: 1.9659
+Averaged Test Accuracy: 0.3038
+Averaged Test AUC: 0.7482
+Std Test Accuracy: 0.2058
+Std Test AUC: 0.1602
+
+--- Round 39/500 ---
+Averaged Train Loss: 1.9793
+Averaged Test Accuracy: 0.3077
+Averaged Test AUC: 0.7488
+Std Test Accuracy: 0.2001
+Std Test AUC: 0.1621
+
+--- Round 40/500 ---
+Averaged Train Loss: 1.9251
+Averaged Test Accuracy: 0.3092
+Averaged Test AUC: 0.7574
+Std Test Accuracy: 0.2188
+Std Test AUC: 0.1531
+
+--- Round 41/500 ---
+Averaged Train Loss: 1.9216
+Averaged Test Accuracy: 0.2916
+Averaged Test AUC: 0.7647
+Std Test Accuracy: 0.2316
+Std Test AUC: 0.1359
+
+--- Round 42/500 ---
+Averaged Train Loss: 2.0471
+Averaged Test Accuracy: 0.2760
+Averaged Test AUC: 0.7487
+Std Test Accuracy: 0.2531
+Std Test AUC: 0.1453
+
+--- Round 43/500 ---
+Averaged Train Loss: 1.9347
+Averaged Test Accuracy: 0.2974
+Averaged Test AUC: 0.7646
+Std Test Accuracy: 0.2347
+Std Test AUC: 0.1372
+
+--- Round 44/500 ---
+Averaged Train Loss: 1.8683
+Averaged Test Accuracy: 0.3141
+Averaged Test AUC: 0.7711
+Std Test Accuracy: 0.2180
+Std Test AUC: 0.1299
+
+--- Round 45/500 ---
+Averaged Train Loss: 1.9259
+Averaged Test Accuracy: 0.3046
+Averaged Test AUC: 0.7679
+Std Test Accuracy: 0.2092
+Std Test AUC: 0.1266
+
+--- Round 46/500 ---
+Averaged Train Loss: 1.9473
+Averaged Test Accuracy: 0.3158
+Averaged Test AUC: 0.7581
+Std Test Accuracy: 0.2080
+Std Test AUC: 0.1454
+
+--- Round 47/500 ---
+Averaged Train Loss: 1.7809
+Averaged Test Accuracy: 0.3428
+Averaged Test AUC: 0.7936
+Std Test Accuracy: 0.1632
+Std Test AUC: 0.0872
+
+--- Round 48/500 ---
+Averaged Train Loss: 1.8705
+Averaged Test Accuracy: 0.3135
+Averaged Test AUC: 0.7784
+Std Test Accuracy: 0.1939
+Std Test AUC: 0.1110
+
+--- Round 49/500 ---
+Averaged Train Loss: 1.8604
+Averaged Test Accuracy: 0.3342
+Averaged Test AUC: 0.7731
+Std Test Accuracy: 0.1972
+Std Test AUC: 0.1291
+
+--- Round 50/500 ---
+Averaged Train Loss: 1.9090
+Averaged Test Accuracy: 0.3223
+Averaged Test AUC: 0.7672
+Std Test Accuracy: 0.2052
+Std Test AUC: 0.1399
+
+--- Round 51/500 ---
+Averaged Train Loss: 1.9195
+Averaged Test Accuracy: 0.2889
+Averaged Test AUC: 0.7715
+Std Test Accuracy: 0.2283
+Std Test AUC: 0.1252
+
+--- Round 52/500 ---
+Averaged Train Loss: 1.8953
+Averaged Test Accuracy: 0.3248
+Averaged Test AUC: 0.7676
+Std Test Accuracy: 0.2107
+Std Test AUC: 0.1393
+
+--- Round 53/500 ---
+Averaged Train Loss: 1.8468
+Averaged Test Accuracy: 0.3287
+Averaged Test AUC: 0.7816
+Std Test Accuracy: 0.2012
+Std Test AUC: 0.1165
+
+--- Round 54/500 ---
+Averaged Train Loss: 1.8531
+Averaged Test Accuracy: 0.3292
+Averaged Test AUC: 0.7822
+Std Test Accuracy: 0.2027
+Std Test AUC: 0.1137
+
+--- Round 55/500 ---
+Averaged Train Loss: 1.8363
+Averaged Test Accuracy: 0.3268
+Averaged Test AUC: 0.7783
+Std Test Accuracy: 0.2121
+Std Test AUC: 0.1281
+
+--- Round 56/500 ---
+Averaged Train Loss: 1.8248
+Averaged Test Accuracy: 0.3346
+Averaged Test AUC: 0.7851
+Std Test Accuracy: 0.1987
+Std Test AUC: 0.1144
+
+--- Round 57/500 ---
+Averaged Train Loss: 1.8995
+Averaged Test Accuracy: 0.2933
+Averaged Test AUC: 0.7779
+Std Test Accuracy: 0.2319
+Std Test AUC: 0.1165
+
+--- Round 58/500 ---
+Averaged Train Loss: 1.9458
+Averaged Test Accuracy: 0.3417
+Averaged Test AUC: 0.7611
+Std Test Accuracy: 0.2118
+Std Test AUC: 0.1481
+
+--- Round 59/500 ---
+Averaged Train Loss: 1.8244
+Averaged Test Accuracy: 0.3300
+Averaged Test AUC: 0.7836
+Std Test Accuracy: 0.2185
+Std Test AUC: 0.1195
+
+--- Round 60/500 ---
+Averaged Train Loss: 1.8553
+Averaged Test Accuracy: 0.3193
+Averaged Test AUC: 0.7791
+Std Test Accuracy: 0.2038
+Std Test AUC: 0.1191
+
+--- Round 61/500 ---
+Averaged Train Loss: 1.8192
+Averaged Test Accuracy: 0.3306
+Averaged Test AUC: 0.7867
+Std Test Accuracy: 0.2269
+Std Test AUC: 0.1188
+
+--- Round 62/500 ---
+Averaged Train Loss: 1.8308
+Averaged Test Accuracy: 0.3432
+Averaged Test AUC: 0.7837
+Std Test Accuracy: 0.1931
+Std Test AUC: 0.1266
+
+--- Round 63/500 ---
+Averaged Train Loss: 1.8458
+Averaged Test Accuracy: 0.3463
+Averaged Test AUC: 0.7813
+Std Test Accuracy: 0.2012
+Std Test AUC: 0.1269
+
+--- Round 64/500 ---
+Averaged Train Loss: 1.7512
+Averaged Test Accuracy: 0.3712
+Averaged Test AUC: 0.7945
+Std Test Accuracy: 0.1897
+Std Test AUC: 0.1156
+
+--- Round 65/500 ---
+Averaged Train Loss: 1.9076
+Averaged Test Accuracy: 0.3267
+Averaged Test AUC: 0.7759
+Std Test Accuracy: 0.2199
+Std Test AUC: 0.1258
+
+--- Round 66/500 ---
+Averaged Train Loss: 1.8438
+Averaged Test Accuracy: 0.3529
+Averaged Test AUC: 0.7781
+Std Test Accuracy: 0.2062
+Std Test AUC: 0.1415
+
+--- Round 67/500 ---
+Averaged Train Loss: 1.8711
+Averaged Test Accuracy: 0.3414
+Averaged Test AUC: 0.7781
+Std Test Accuracy: 0.2098
+Std Test AUC: 0.1338
+
+--- Round 68/500 ---
+Averaged Train Loss: 1.8283
+Averaged Test Accuracy: 0.3491
+Averaged Test AUC: 0.7846
+Std Test Accuracy: 0.2016
+Std Test AUC: 0.1254
+
+--- Round 69/500 ---
+Averaged Train Loss: 1.8095
+Averaged Test Accuracy: 0.3409
+Averaged Test AUC: 0.7906
+Std Test Accuracy: 0.2228
+Std Test AUC: 0.1179
+
+--- Round 70/500 ---
+Averaged Train Loss: 1.7186
+Averaged Test Accuracy: 0.3791
+Averaged Test AUC: 0.8017
+Std Test Accuracy: 0.1546
+Std Test AUC: 0.0991
+
+--- Round 71/500 ---
+Averaged Train Loss: 1.8028
+Averaged Test Accuracy: 0.3509
+Averaged Test AUC: 0.7938
+Std Test Accuracy: 0.1846
+Std Test AUC: 0.1063
+
+--- Round 72/500 ---
+Averaged Train Loss: 1.8472
+Averaged Test Accuracy: 0.3290
+Averaged Test AUC: 0.7848
+Std Test Accuracy: 0.2233
+Std Test AUC: 0.1138
+
+--- Round 73/500 ---
+Averaged Train Loss: 1.7981
+Averaged Test Accuracy: 0.3506
+Averaged Test AUC: 0.7890
+Std Test Accuracy: 0.1899
+Std Test AUC: 0.1142
+
+--- Round 74/500 ---
+Averaged Train Loss: 1.8761
+Averaged Test Accuracy: 0.3323
+Averaged Test AUC: 0.7787
+Std Test Accuracy: 0.2134
+Std Test AUC: 0.1270
+
+--- Round 75/500 ---
+Averaged Train Loss: 1.7759
+Averaged Test Accuracy: 0.3532
+Averaged Test AUC: 0.7927
+Std Test Accuracy: 0.2065
+Std Test AUC: 0.1135
+
+--- Round 76/500 ---
+Averaged Train Loss: 1.8506
+Averaged Test Accuracy: 0.3450
+Averaged Test AUC: 0.7812
+Std Test Accuracy: 0.1960
+Std Test AUC: 0.1262
+
+--- Round 77/500 ---
+Averaged Train Loss: 1.7452
+Averaged Test Accuracy: 0.3799
+Averaged Test AUC: 0.7947
+Std Test Accuracy: 0.1895
+Std Test AUC: 0.1211
+
+--- Round 78/500 ---
+Averaged Train Loss: 1.8335
+Averaged Test Accuracy: 0.3440
+Averaged Test AUC: 0.7854
+Std Test Accuracy: 0.2054
+Std Test AUC: 0.1150
+
+--- Round 79/500 ---
+Averaged Train Loss: 1.7891
+Averaged Test Accuracy: 0.3604
+Averaged Test AUC: 0.7923
+Std Test Accuracy: 0.2092
+Std Test AUC: 0.1147
+
+--- Round 80/500 ---
+Averaged Train Loss: 1.8180
+Averaged Test Accuracy: 0.3526
+Averaged Test AUC: 0.7919
+Std Test Accuracy: 0.1957
+Std Test AUC: 0.1144
+
+--- Round 81/500 ---
+Averaged Train Loss: 1.7938
+Averaged Test Accuracy: 0.3548
+Averaged Test AUC: 0.7959
+Std Test Accuracy: 0.1938
+Std Test AUC: 0.1070
+
+--- Round 82/500 ---
+Averaged Train Loss: 1.7304
+Averaged Test Accuracy: 0.3799
+Averaged Test AUC: 0.7970
+Std Test Accuracy: 0.1875
+Std Test AUC: 0.1190
+
+--- Round 83/500 ---
+Averaged Train Loss: 1.7700
+Averaged Test Accuracy: 0.3543
+Averaged Test AUC: 0.7988
+Std Test Accuracy: 0.2124
+Std Test AUC: 0.1132
+
+--- Round 84/500 ---
+Averaged Train Loss: 1.7929
+Averaged Test Accuracy: 0.3620
+Averaged Test AUC: 0.7944
+Std Test Accuracy: 0.1918
+Std Test AUC: 0.1156
+
+--- Round 85/500 ---
+Averaged Train Loss: 1.6660
+Averaged Test Accuracy: 0.3902
+Averaged Test AUC: 0.8171
+Std Test Accuracy: 0.1664
+Std Test AUC: 0.0782
+
+--- Round 86/500 ---
+Averaged Train Loss: 1.6314
+Averaged Test Accuracy: 0.4115
+Averaged Test AUC: 0.8177
+Std Test Accuracy: 0.1372
+Std Test AUC: 0.0827
+
+--- Round 87/500 ---
+Averaged Train Loss: 1.7109
+Averaged Test Accuracy: 0.3819
+Averaged Test AUC: 0.8059
+Std Test Accuracy: 0.1877
+Std Test AUC: 0.0975
+
+--- Round 88/500 ---
+Averaged Train Loss: 1.7585
+Averaged Test Accuracy: 0.3450
+Averaged Test AUC: 0.8012
+Std Test Accuracy: 0.2046
+Std Test AUC: 0.0972
+
+--- Round 89/500 ---
+Averaged Train Loss: 1.7558
+Averaged Test Accuracy: 0.3668
+Averaged Test AUC: 0.7989
+Std Test Accuracy: 0.1915
+Std Test AUC: 0.1084
+
+--- Round 90/500 ---
+Averaged Train Loss: 1.7345
+Averaged Test Accuracy: 0.3672
+Averaged Test AUC: 0.8004
+Std Test Accuracy: 0.2053
+Std Test AUC: 0.1095
+
+--- Round 91/500 ---
+Averaged Train Loss: 1.7196
+Averaged Test Accuracy: 0.3723
+Averaged Test AUC: 0.8038
+Std Test Accuracy: 0.2028
+Std Test AUC: 0.1057
+
+--- Round 92/500 ---
+Averaged Train Loss: 1.7575
+Averaged Test Accuracy: 0.3705
+Averaged Test AUC: 0.7974
+Std Test Accuracy: 0.1928
+Std Test AUC: 0.1091
+
+--- Round 93/500 ---
+Averaged Train Loss: 1.7254
+Averaged Test Accuracy: 0.3828
+Averaged Test AUC: 0.8008
+Std Test Accuracy: 0.1962
+Std Test AUC: 0.1147
+
+--- Round 94/500 ---
+Averaged Train Loss: 1.7229
+Averaged Test Accuracy: 0.3738
+Averaged Test AUC: 0.8076
+Std Test Accuracy: 0.1880
+Std Test AUC: 0.0946
+
+--- Round 95/500 ---
+Averaged Train Loss: 1.7741
+Averaged Test Accuracy: 0.3451
+Averaged Test AUC: 0.7987
+Std Test Accuracy: 0.2164
+Std Test AUC: 0.0985
+
+--- Round 96/500 ---
+Averaged Train Loss: 1.8444
+Averaged Test Accuracy: 0.3455
+Averaged Test AUC: 0.7905
+Std Test Accuracy: 0.2155
+Std Test AUC: 0.1077
+
+--- Round 97/500 ---
+Averaged Train Loss: 1.8185
+Averaged Test Accuracy: 0.3385
+Averaged Test AUC: 0.7946
+Std Test Accuracy: 0.2271
+Std Test AUC: 0.1030
+
+--- Round 98/500 ---
+Averaged Train Loss: 1.6312
+Averaged Test Accuracy: 0.4048
+Averaged Test AUC: 0.8195
+Std Test Accuracy: 0.1551
+Std Test AUC: 0.0726
+
+--- Round 99/500 ---
+Averaged Train Loss: 1.7231
+Averaged Test Accuracy: 0.3632
+Averaged Test AUC: 0.8050
+Std Test Accuracy: 0.2025
+Std Test AUC: 0.0888
+
+--- Round 100/500 ---
+Averaged Train Loss: 1.7176
+Averaged Test Accuracy: 0.3667
+Averaged Test AUC: 0.8065
+Std Test Accuracy: 0.2053
+Std Test AUC: 0.0994
+
+--- Round 101/500 ---
+Averaged Train Loss: 1.7072
+Averaged Test Accuracy: 0.3830
+Averaged Test AUC: 0.8090
+Std Test Accuracy: 0.1960
+Std Test AUC: 0.0961
+
+--- Round 102/500 ---
+Averaged Train Loss: 1.7187
+Averaged Test Accuracy: 0.3794
+Averaged Test AUC: 0.8061
+Std Test Accuracy: 0.1889
+Std Test AUC: 0.1025
+
+--- Round 103/500 ---
+Averaged Train Loss: 1.8137
+Averaged Test Accuracy: 0.3513
+Averaged Test AUC: 0.7931
+Std Test Accuracy: 0.2166
+Std Test AUC: 0.1170
+
+--- Round 104/500 ---
+Averaged Train Loss: 1.8328
+Averaged Test Accuracy: 0.3470
+Averaged Test AUC: 0.7900
+Std Test Accuracy: 0.2212
+Std Test AUC: 0.1222
+
+--- Round 105/500 ---
+Averaged Train Loss: 1.7614
+Averaged Test Accuracy: 0.3709
+Averaged Test AUC: 0.7976
+Std Test Accuracy: 0.2058
+Std Test AUC: 0.1174
+
+--- Round 106/500 ---
+Averaged Train Loss: 1.7605
+Averaged Test Accuracy: 0.3735
+Averaged Test AUC: 0.7975
+Std Test Accuracy: 0.2116
+Std Test AUC: 0.1194
+
+--- Round 107/500 ---
+Averaged Train Loss: 1.8250
+Averaged Test Accuracy: 0.3488
+Averaged Test AUC: 0.7918
+Std Test Accuracy: 0.2184
+Std Test AUC: 0.1199
+
+--- Round 108/500 ---
+Averaged Train Loss: 1.9243
+Averaged Test Accuracy: 0.3536
+Averaged Test AUC: 0.7776
+Std Test Accuracy: 0.2233
+Std Test AUC: 0.1350
+
+--- Round 109/500 ---
+Averaged Train Loss: 1.6575
+Averaged Test Accuracy: 0.3842
+Averaged Test AUC: 0.8150
+Std Test Accuracy: 0.1919
+Std Test AUC: 0.0948
+
+--- Round 110/500 ---
+Averaged Train Loss: 1.6326
+Averaged Test Accuracy: 0.4024
+Averaged Test AUC: 0.8177
+Std Test Accuracy: 0.1746
+Std Test AUC: 0.0890
+
+--- Round 111/500 ---
+Averaged Train Loss: 1.7285
+Averaged Test Accuracy: 0.3670
+Averaged Test AUC: 0.8056
+Std Test Accuracy: 0.2032
+Std Test AUC: 0.0989
+
+--- Round 112/500 ---
+Averaged Train Loss: 1.5979
+Averaged Test Accuracy: 0.4172
+Averaged Test AUC: 0.8245
+Std Test Accuracy: 0.1515
+Std Test AUC: 0.0711
+
+--- Round 113/500 ---
+Averaged Train Loss: 1.5748
+Averaged Test Accuracy: 0.4194
+Averaged Test AUC: 0.8332
+Std Test Accuracy: 0.1646
+Std Test AUC: 0.0482
+
+--- Round 114/500 ---
+Averaged Train Loss: 1.6043
+Averaged Test Accuracy: 0.4116
+Averaged Test AUC: 0.8318
+Std Test Accuracy: 0.1805
+Std Test AUC: 0.0629
+
+--- Round 115/500 ---
+Averaged Train Loss: 1.5761
+Averaged Test Accuracy: 0.4151
+Averaged Test AUC: 0.8334
+Std Test Accuracy: 0.1495
+Std Test AUC: 0.0507
+
+--- Round 116/500 ---
+Averaged Train Loss: 1.5296
+Averaged Test Accuracy: 0.4417
+Averaged Test AUC: 0.8388
+Std Test Accuracy: 0.1044
+Std Test AUC: 0.0379
+
+--- Round 117/500 ---
+Averaged Train Loss: 1.5361
+Averaged Test Accuracy: 0.4361
+Averaged Test AUC: 0.8388
+Std Test Accuracy: 0.1263
+Std Test AUC: 0.0452
+
+--- Round 118/500 ---
+Averaged Train Loss: 1.7057
+Averaged Test Accuracy: 0.3874
+Averaged Test AUC: 0.8107
+Std Test Accuracy: 0.1678
+Std Test AUC: 0.0730
+
+--- Round 119/500 ---
+Averaged Train Loss: 1.5386
+Averaged Test Accuracy: 0.4367
+Averaged Test AUC: 0.8392
+Std Test Accuracy: 0.1650
+Std Test AUC: 0.0505
+
+--- Round 120/500 ---
+Averaged Train Loss: 1.5314
+Averaged Test Accuracy: 0.4425
+Averaged Test AUC: 0.8380
+Std Test Accuracy: 0.1274
+Std Test AUC: 0.0452
+
+--- Round 121/500 ---
+Averaged Train Loss: 1.5127
+Averaged Test Accuracy: 0.4414
+Averaged Test AUC: 0.8420
+Std Test Accuracy: 0.1129
+Std Test AUC: 0.0364
+
+--- Round 122/500 ---
+Averaged Train Loss: 1.7687
+Averaged Test Accuracy: 0.3512
+Averaged Test AUC: 0.8101
+Std Test Accuracy: 0.2070
+Std Test AUC: 0.0851
+
+--- Round 123/500 ---
+Averaged Train Loss: 1.6653
+Averaged Test Accuracy: 0.3914
+Averaged Test AUC: 0.8292
+Std Test Accuracy: 0.1924
+Std Test AUC: 0.0599
+
+--- Round 124/500 ---
+Averaged Train Loss: 1.5401
+Averaged Test Accuracy: 0.4311
+Averaged Test AUC: 0.8377
+Std Test Accuracy: 0.1593
+Std Test AUC: 0.0495
+
+--- Round 125/500 ---
+Averaged Train Loss: 1.5269
+Averaged Test Accuracy: 0.4363
+Averaged Test AUC: 0.8387
+Std Test Accuracy: 0.1327
+Std Test AUC: 0.0460
+
+--- Round 126/500 ---
+Averaged Train Loss: 1.7016
+Averaged Test Accuracy: 0.3591
+Averaged Test AUC: 0.8160
+Std Test Accuracy: 0.1740
+Std Test AUC: 0.0683
+
+--- Round 127/500 ---
+Averaged Train Loss: 1.9313
+Averaged Test Accuracy: 0.3320
+Averaged Test AUC: 0.8020
+Std Test Accuracy: 0.2349
+Std Test AUC: 0.0873
+
+--- Round 128/500 ---
+Averaged Train Loss: 1.5467
+Averaged Test Accuracy: 0.4232
+Averaged Test AUC: 0.8380
+Std Test Accuracy: 0.1625
+Std Test AUC: 0.0465
+
+--- Round 129/500 ---
+Averaged Train Loss: 1.5427
+Averaged Test Accuracy: 0.4257
+Averaged Test AUC: 0.8361
+Std Test Accuracy: 0.1542
+Std Test AUC: 0.0569
+
+--- Round 130/500 ---
+Averaged Train Loss: 1.6680
+Averaged Test Accuracy: 0.3733
+Averaged Test AUC: 0.8185
+Std Test Accuracy: 0.1869
+Std Test AUC: 0.0751
+
+--- Round 131/500 ---
+Averaged Train Loss: 1.7045
+Averaged Test Accuracy: 0.3852
+Averaged Test AUC: 0.8272
+Std Test Accuracy: 0.1956
+Std Test AUC: 0.0562
+
+--- Round 132/500 ---
+Averaged Train Loss: 1.5084
+Averaged Test Accuracy: 0.4460
+Averaged Test AUC: 0.8422
+Std Test Accuracy: 0.1355
+Std Test AUC: 0.0400
+
+--- Round 133/500 ---
+Averaged Train Loss: 1.5226
+Averaged Test Accuracy: 0.4361
+Averaged Test AUC: 0.8398
+Std Test Accuracy: 0.1394
+Std Test AUC: 0.0474
+
+--- Round 134/500 ---
+Averaged Train Loss: 1.6470
+Averaged Test Accuracy: 0.3775
+Averaged Test AUC: 0.8237
+Std Test Accuracy: 0.1680
+Std Test AUC: 0.0593
+
+--- Round 135/500 ---
+Averaged Train Loss: 1.6826
+Averaged Test Accuracy: 0.3817
+Averaged Test AUC: 0.8282
+Std Test Accuracy: 0.2231
+Std Test AUC: 0.0711
+
+--- Round 136/500 ---
+Averaged Train Loss: 1.5702
+Averaged Test Accuracy: 0.4186
+Averaged Test AUC: 0.8380
+Std Test Accuracy: 0.1847
+Std Test AUC: 0.0484
+
+--- Round 137/500 ---
+Averaged Train Loss: 1.5167
+Averaged Test Accuracy: 0.4378
+Averaged Test AUC: 0.8408
+Std Test Accuracy: 0.1417
+Std Test AUC: 0.0468
+
+--- Round 138/500 ---
+Averaged Train Loss: 1.6461
+Averaged Test Accuracy: 0.3741
+Averaged Test AUC: 0.8240
+Std Test Accuracy: 0.1696
+Std Test AUC: 0.0616
+
+--- Round 139/500 ---
+Averaged Train Loss: 1.7851
+Averaged Test Accuracy: 0.3689
+Averaged Test AUC: 0.8183
+Std Test Accuracy: 0.2201
+Std Test AUC: 0.0756
+
+--- Round 140/500 ---
+Averaged Train Loss: 1.4969
+Averaged Test Accuracy: 0.4516
+Averaged Test AUC: 0.8442
+Std Test Accuracy: 0.1412
+Std Test AUC: 0.0447
+
+--- Round 141/500 ---
+Averaged Train Loss: 1.5022
+Averaged Test Accuracy: 0.4399
+Averaged Test AUC: 0.8423
+Std Test Accuracy: 0.1344
+Std Test AUC: 0.0441
+
+--- Round 142/500 ---
+Averaged Train Loss: 1.6841
+Averaged Test Accuracy: 0.3643
+Averaged Test AUC: 0.8200
+Std Test Accuracy: 0.1875
+Std Test AUC: 0.0683
+
+--- Round 143/500 ---
+Averaged Train Loss: 1.7022
+Averaged Test Accuracy: 0.3619
+Averaged Test AUC: 0.8228
+Std Test Accuracy: 0.2195
+Std Test AUC: 0.0724
+
+--- Round 144/500 ---
+Averaged Train Loss: 1.4807
+Averaged Test Accuracy: 0.4614
+Averaged Test AUC: 0.8462
+Std Test Accuracy: 0.1249
+Std Test AUC: 0.0401
+
+--- Round 145/500 ---
+Averaged Train Loss: 1.5243
+Averaged Test Accuracy: 0.4320
+Averaged Test AUC: 0.8412
+Std Test Accuracy: 0.1303
+Std Test AUC: 0.0445
+
+--- Round 146/500 ---
+Averaged Train Loss: 1.6903
+Averaged Test Accuracy: 0.3654
+Averaged Test AUC: 0.8202
+Std Test Accuracy: 0.1904
+Std Test AUC: 0.0680
+
+--- Round 147/500 ---
+Averaged Train Loss: 1.7393
+Averaged Test Accuracy: 0.3588
+Averaged Test AUC: 0.8220
+Std Test Accuracy: 0.2324
+Std Test AUC: 0.0758
+
+--- Round 148/500 ---
+Averaged Train Loss: 1.4885
+Averaged Test Accuracy: 0.4538
+Averaged Test AUC: 0.8461
+Std Test Accuracy: 0.1198
+Std Test AUC: 0.0382
+
+--- Round 149/500 ---
+Averaged Train Loss: 1.4836
+Averaged Test Accuracy: 0.4513
+Averaged Test AUC: 0.8473
+Std Test Accuracy: 0.1103
+Std Test AUC: 0.0355
+
+--- Round 150/500 ---
+Averaged Train Loss: 1.6534
+Averaged Test Accuracy: 0.3747
+Averaged Test AUC: 0.8250
+Std Test Accuracy: 0.1765
+Std Test AUC: 0.0618
+
+--- Round 151/500 ---
+Averaged Train Loss: 1.8347
+Averaged Test Accuracy: 0.3554
+Averaged Test AUC: 0.8159
+Std Test Accuracy: 0.2383
+Std Test AUC: 0.0818
+
+--- Round 152/500 ---
+Averaged Train Loss: 1.4734
+Averaged Test Accuracy: 0.4586
+Averaged Test AUC: 0.8482
+Std Test Accuracy: 0.1397
+Std Test AUC: 0.0429
+
+--- Round 153/500 ---
+Averaged Train Loss: 1.5166
+Averaged Test Accuracy: 0.4264
+Averaged Test AUC: 0.8411
+Std Test Accuracy: 0.1563
+Std Test AUC: 0.0479
+
+--- Round 154/500 ---
+Averaged Train Loss: 1.7014
+Averaged Test Accuracy: 0.3674
+Averaged Test AUC: 0.8173
+Std Test Accuracy: 0.1933
+Std Test AUC: 0.0787
+
+--- Round 155/500 ---
+Averaged Train Loss: 1.8178
+Averaged Test Accuracy: 0.3539
+Averaged Test AUC: 0.8134
+Std Test Accuracy: 0.2285
+Std Test AUC: 0.0827
+
+--- Round 156/500 ---
+Averaged Train Loss: 1.4708
+Averaged Test Accuracy: 0.4604
+Averaged Test AUC: 0.8479
+Std Test Accuracy: 0.1291
+Std Test AUC: 0.0384
+
+--- Round 157/500 ---
+Averaged Train Loss: 1.4864
+Averaged Test Accuracy: 0.4485
+Averaged Test AUC: 0.8444
+Std Test Accuracy: 0.1338
+Std Test AUC: 0.0459
+
+--- Round 158/500 ---
+Averaged Train Loss: 1.6533
+Averaged Test Accuracy: 0.3767
+Averaged Test AUC: 0.8219
+Std Test Accuracy: 0.1829
+Std Test AUC: 0.0736
+
+--- Round 159/500 ---
+Averaged Train Loss: 1.7842
+Averaged Test Accuracy: 0.3727
+Averaged Test AUC: 0.8220
+Std Test Accuracy: 0.2341
+Std Test AUC: 0.0770
+
+--- Round 160/500 ---
+Averaged Train Loss: 1.5203
+Averaged Test Accuracy: 0.4336
+Averaged Test AUC: 0.8438
+Std Test Accuracy: 0.1819
+Std Test AUC: 0.0508
+
+--- Round 161/500 ---
+Averaged Train Loss: 1.4918
+Averaged Test Accuracy: 0.4474
+Averaged Test AUC: 0.8440
+Std Test Accuracy: 0.1086
+Std Test AUC: 0.0451
+
+--- Round 162/500 ---
+Averaged Train Loss: 1.6729
+Averaged Test Accuracy: 0.3766
+Averaged Test AUC: 0.8207
+Std Test Accuracy: 0.1827
+Std Test AUC: 0.0785
+
+--- Round 163/500 ---
+Averaged Train Loss: 1.7742
+Averaged Test Accuracy: 0.3518
+Averaged Test AUC: 0.8200
+Std Test Accuracy: 0.2376
+Std Test AUC: 0.0731
+
+--- Round 164/500 ---
+Averaged Train Loss: 1.4867
+Averaged Test Accuracy: 0.4490
+Averaged Test AUC: 0.8472
+Std Test Accuracy: 0.1491
+Std Test AUC: 0.0401
+
+--- Round 165/500 ---
+Averaged Train Loss: 1.4786
+Averaged Test Accuracy: 0.4561
+Averaged Test AUC: 0.8460
+Std Test Accuracy: 0.1126
+Std Test AUC: 0.0402
+
+--- Round 166/500 ---
+Averaged Train Loss: 1.6500
+Averaged Test Accuracy: 0.3862
+Averaged Test AUC: 0.8245
+Std Test Accuracy: 0.1743
+Std Test AUC: 0.0720
+
+--- Round 167/500 ---
+Averaged Train Loss: 1.9524
+Averaged Test Accuracy: 0.3405
+Averaged Test AUC: 0.8111
+Std Test Accuracy: 0.2311
+Std Test AUC: 0.0772
+
+--- Round 168/500 ---
+Averaged Train Loss: 1.4726
+Averaged Test Accuracy: 0.4613
+Averaged Test AUC: 0.8482
+Std Test Accuracy: 0.1288
+Std Test AUC: 0.0412
+
+--- Round 169/500 ---
+Averaged Train Loss: 1.5127
+Averaged Test Accuracy: 0.4334
+Averaged Test AUC: 0.8432
+Std Test Accuracy: 0.1599
+Std Test AUC: 0.0489
+
+--- Round 170/500 ---
+Averaged Train Loss: 1.6127
+Averaged Test Accuracy: 0.3942
+Averaged Test AUC: 0.8276
+Std Test Accuracy: 0.1658
+Std Test AUC: 0.0686
+
+--- Round 171/500 ---
+Averaged Train Loss: 1.7691
+Averaged Test Accuracy: 0.3761
+Averaged Test AUC: 0.8262
+Std Test Accuracy: 0.2243
+Std Test AUC: 0.0692
+
+--- Round 172/500 ---
+Averaged Train Loss: 1.4914
+Averaged Test Accuracy: 0.4516
+Averaged Test AUC: 0.8462
+Std Test Accuracy: 0.1589
+Std Test AUC: 0.0486
+
+--- Round 173/500 ---
+Averaged Train Loss: 1.4797
+Averaged Test Accuracy: 0.4504
+Averaged Test AUC: 0.8464
+Std Test Accuracy: 0.1290
+Std Test AUC: 0.0430
+
+--- Round 174/500 ---
+Averaged Train Loss: 1.5908
+Averaged Test Accuracy: 0.4044
+Averaged Test AUC: 0.8319
+Std Test Accuracy: 0.1590
+Std Test AUC: 0.0592
+
+--- Round 175/500 ---
+Averaged Train Loss: 1.7760
+Averaged Test Accuracy: 0.3797
+Averaged Test AUC: 0.8255
+Std Test Accuracy: 0.2374
+Std Test AUC: 0.0816
+
+--- Round 176/500 ---
+Averaged Train Loss: 1.6132
+Averaged Test Accuracy: 0.4031
+Averaged Test AUC: 0.8332
+Std Test Accuracy: 0.1930
+Std Test AUC: 0.0668
+
+--- Round 177/500 ---
+Averaged Train Loss: 1.4929
+Averaged Test Accuracy: 0.4442
+Averaged Test AUC: 0.8453
+Std Test Accuracy: 0.1454
+Std Test AUC: 0.0478
+
+--- Round 178/500 ---
+Averaged Train Loss: 1.6330
+Averaged Test Accuracy: 0.3948
+Averaged Test AUC: 0.8259
+Std Test Accuracy: 0.1693
+Std Test AUC: 0.0722
+
+--- Round 179/500 ---
+Averaged Train Loss: 1.6856
+Averaged Test Accuracy: 0.3869
+Averaged Test AUC: 0.8314
+Std Test Accuracy: 0.2102
+Std Test AUC: 0.0669
+
+--- Round 180/500 ---
+Averaged Train Loss: 1.5099
+Averaged Test Accuracy: 0.4385
+Averaged Test AUC: 0.8441
+Std Test Accuracy: 0.1609
+Std Test AUC: 0.0479
+
+--- Round 181/500 ---
+Averaged Train Loss: 1.5082
+Averaged Test Accuracy: 0.4391
+Averaged Test AUC: 0.8440
+Std Test Accuracy: 0.1350
+Std Test AUC: 0.0486
+
+--- Round 182/500 ---
+Averaged Train Loss: 1.6873
+Averaged Test Accuracy: 0.3665
+Averaged Test AUC: 0.8220
+Std Test Accuracy: 0.1893
+Std Test AUC: 0.0699
+
+--- Round 183/500 ---
+Averaged Train Loss: 1.6048
+Averaged Test Accuracy: 0.4168
+Averaged Test AUC: 0.8372
+Std Test Accuracy: 0.1792
+Std Test AUC: 0.0652
+
+--- Round 184/500 ---
+Averaged Train Loss: 1.5689
+Averaged Test Accuracy: 0.4198
+Averaged Test AUC: 0.8370
+Std Test Accuracy: 0.1656
+Std Test AUC: 0.0549
+
+--- Round 185/500 ---
+Averaged Train Loss: 1.4576
+Averaged Test Accuracy: 0.4609
+Averaged Test AUC: 0.8488
+Std Test Accuracy: 0.1196
+Std Test AUC: 0.0413
+
+--- Round 186/500 ---
+Averaged Train Loss: 1.6071
+Averaged Test Accuracy: 0.3942
+Averaged Test AUC: 0.8305
+Std Test Accuracy: 0.1639
+Std Test AUC: 0.0607
+
+--- Round 187/500 ---
+Averaged Train Loss: 1.7102
+Averaged Test Accuracy: 0.3974
+Averaged Test AUC: 0.8314
+Std Test Accuracy: 0.2124
+Std Test AUC: 0.0769
+
+--- Round 188/500 ---
+Averaged Train Loss: 1.5218
+Averaged Test Accuracy: 0.4414
+Averaged Test AUC: 0.8407
+Std Test Accuracy: 0.1692
+Std Test AUC: 0.0616
+
+--- Round 189/500 ---
+Averaged Train Loss: 1.4557
+Averaged Test Accuracy: 0.4583
+Averaged Test AUC: 0.8491
+Std Test Accuracy: 0.1245
+Std Test AUC: 0.0414
+
+--- Round 190/500 ---
+Averaged Train Loss: 1.6429
+Averaged Test Accuracy: 0.3794
+Averaged Test AUC: 0.8281
+Std Test Accuracy: 0.1829
+Std Test AUC: 0.0609
+
+--- Round 191/500 ---
+Averaged Train Loss: 1.7956
+Averaged Test Accuracy: 0.3763
+Averaged Test AUC: 0.8250
+Std Test Accuracy: 0.2298
+Std Test AUC: 0.0832
+
+--- Round 192/500 ---
+Averaged Train Loss: 1.4796
+Averaged Test Accuracy: 0.4541
+Averaged Test AUC: 0.8464
+Std Test Accuracy: 0.1500
+Std Test AUC: 0.0508
+
+--- Round 193/500 ---
+Averaged Train Loss: 1.4912
+Averaged Test Accuracy: 0.4451
+Averaged Test AUC: 0.8461
+Std Test Accuracy: 0.1588
+Std Test AUC: 0.0482
+
+--- Round 194/500 ---
+Averaged Train Loss: 1.6418
+Averaged Test Accuracy: 0.3799
+Averaged Test AUC: 0.8280
+Std Test Accuracy: 0.1783
+Std Test AUC: 0.0608
+
+--- Round 195/500 ---
+Averaged Train Loss: 1.7012
+Averaged Test Accuracy: 0.4029
+Averaged Test AUC: 0.8300
+Std Test Accuracy: 0.2178
+Std Test AUC: 0.0794
+
+--- Round 196/500 ---
+Averaged Train Loss: 1.5061
+Averaged Test Accuracy: 0.4460
+Averaged Test AUC: 0.8430
+Std Test Accuracy: 0.1625
+Std Test AUC: 0.0582
+
+--- Round 197/500 ---
+Averaged Train Loss: 1.4564
+Averaged Test Accuracy: 0.4612
+Averaged Test AUC: 0.8485
+Std Test Accuracy: 0.1187
+Std Test AUC: 0.0438
+
+--- Round 198/500 ---
+Averaged Train Loss: 1.6135
+Averaged Test Accuracy: 0.4023
+Averaged Test AUC: 0.8285
+Std Test Accuracy: 0.1700
+Std Test AUC: 0.0706
+
+--- Round 199/500 ---
+Averaged Train Loss: 1.7018
+Averaged Test Accuracy: 0.3959
+Averaged Test AUC: 0.8335
+Std Test Accuracy: 0.2220
+Std Test AUC: 0.0717
+
+--- Round 200/500 ---
+Averaged Train Loss: 1.5018
+Averaged Test Accuracy: 0.4537
+Averaged Test AUC: 0.8427
+Std Test Accuracy: 0.1651
+Std Test AUC: 0.0596
+
+--- Round 201/500 ---
+Averaged Train Loss: 1.4602
+Averaged Test Accuracy: 0.4588
+Averaged Test AUC: 0.8491
+Std Test Accuracy: 0.1239
+Std Test AUC: 0.0430
+
+--- Round 202/500 ---
+Averaged Train Loss: 1.6719
+Averaged Test Accuracy: 0.3775
+Averaged Test AUC: 0.8227
+Std Test Accuracy: 0.1951
+Std Test AUC: 0.0758
+
+--- Round 203/500 ---
+Averaged Train Loss: 1.6790
+Averaged Test Accuracy: 0.3876
+Averaged Test AUC: 0.8279
+Std Test Accuracy: 0.2034
+Std Test AUC: 0.0770
+
+--- Round 204/500 ---
+Averaged Train Loss: 1.5199
+Averaged Test Accuracy: 0.4368
+Averaged Test AUC: 0.8436
+Std Test Accuracy: 0.1720
+Std Test AUC: 0.0497
+
+--- Round 205/500 ---
+Averaged Train Loss: 1.4593
+Averaged Test Accuracy: 0.4568
+Averaged Test AUC: 0.8487
+Std Test Accuracy: 0.1243
+Std Test AUC: 0.0454
+
+--- Round 206/500 ---
+Averaged Train Loss: 1.6145
+Averaged Test Accuracy: 0.3935
+Averaged Test AUC: 0.8329
+Std Test Accuracy: 0.1703
+Std Test AUC: 0.0580
+
+--- Round 207/500 ---
+Averaged Train Loss: 1.6774
+Averaged Test Accuracy: 0.4003
+Averaged Test AUC: 0.8333
+Std Test Accuracy: 0.2071
+Std Test AUC: 0.0714
+
+--- Round 208/500 ---
+Averaged Train Loss: 1.4872
+Averaged Test Accuracy: 0.4447
+Averaged Test AUC: 0.8463
+Std Test Accuracy: 0.1595
+Std Test AUC: 0.0494
+
+--- Round 209/500 ---
+Averaged Train Loss: 1.4524
+Averaged Test Accuracy: 0.4617
+Averaged Test AUC: 0.8495
+Std Test Accuracy: 0.1294
+Std Test AUC: 0.0456
+
+--- Round 210/500 ---
+Averaged Train Loss: 1.6007
+Averaged Test Accuracy: 0.3945
+Averaged Test AUC: 0.8331
+Std Test Accuracy: 0.1690
+Std Test AUC: 0.0594
+
+--- Round 211/500 ---
+Averaged Train Loss: 1.5655
+Averaged Test Accuracy: 0.4129
+Averaged Test AUC: 0.8409
+Std Test Accuracy: 0.1909
+Std Test AUC: 0.0568
+
+--- Round 212/500 ---
+Averaged Train Loss: 1.4674
+Averaged Test Accuracy: 0.4568
+Averaged Test AUC: 0.8480
+Std Test Accuracy: 0.1347
+Std Test AUC: 0.0438
+
+--- Round 213/500 ---
+Averaged Train Loss: 1.4557
+Averaged Test Accuracy: 0.4560
+Averaged Test AUC: 0.8496
+Std Test Accuracy: 0.1292
+Std Test AUC: 0.0450
+
+--- Round 214/500 ---
+Averaged Train Loss: 1.5920
+Averaged Test Accuracy: 0.3998
+Averaged Test AUC: 0.8340
+Std Test Accuracy: 0.1646
+Std Test AUC: 0.0576
+
+--- Round 215/500 ---
+Averaged Train Loss: 1.5983
+Averaged Test Accuracy: 0.4232
+Averaged Test AUC: 0.8393
+Std Test Accuracy: 0.1972
+Std Test AUC: 0.0687
+
+--- Round 216/500 ---
+Averaged Train Loss: 1.4742
+Averaged Test Accuracy: 0.4534
+Averaged Test AUC: 0.8479
+Std Test Accuracy: 0.1575
+Std Test AUC: 0.0500
+
+--- Round 217/500 ---
+Averaged Train Loss: 1.4607
+Averaged Test Accuracy: 0.4583
+Averaged Test AUC: 0.8486
+Std Test Accuracy: 0.1437
+Std Test AUC: 0.0495
+
+--- Round 218/500 ---
+Averaged Train Loss: 1.5627
+Averaged Test Accuracy: 0.4067
+Averaged Test AUC: 0.8373
+Std Test Accuracy: 0.1537
+Std Test AUC: 0.0523
+
+--- Round 219/500 ---
+Averaged Train Loss: 1.6168
+Averaged Test Accuracy: 0.3915
+Averaged Test AUC: 0.8410
+Std Test Accuracy: 0.2115
+Std Test AUC: 0.0592
+
+--- Round 220/500 ---
+Averaged Train Loss: 1.4870
+Averaged Test Accuracy: 0.4490
+Averaged Test AUC: 0.8472
+Std Test Accuracy: 0.1509
+Std Test AUC: 0.0468
+
+--- Round 221/500 ---
+Averaged Train Loss: 1.4540
+Averaged Test Accuracy: 0.4561
+Averaged Test AUC: 0.8490
+Std Test Accuracy: 0.1361
+Std Test AUC: 0.0491
+
+--- Round 222/500 ---
+Averaged Train Loss: 1.6290
+Averaged Test Accuracy: 0.3932
+Averaged Test AUC: 0.8317
+Std Test Accuracy: 0.1738
+Std Test AUC: 0.0619
+
+--- Round 223/500 ---
+Averaged Train Loss: 1.6816
+Averaged Test Accuracy: 0.3912
+Averaged Test AUC: 0.8322
+Std Test Accuracy: 0.2141
+Std Test AUC: 0.0651
+
+--- Round 224/500 ---
+Averaged Train Loss: 1.5108
+Averaged Test Accuracy: 0.4343
+Averaged Test AUC: 0.8444
+Std Test Accuracy: 0.1787
+Std Test AUC: 0.0528
+
+--- Round 225/500 ---
+Averaged Train Loss: 1.4530
+Averaged Test Accuracy: 0.4616
+Averaged Test AUC: 0.8500
+Std Test Accuracy: 0.1307
+Std Test AUC: 0.0478
+
+--- Round 226/500 ---
+Averaged Train Loss: 1.5628
+Averaged Test Accuracy: 0.4103
+Averaged Test AUC: 0.8368
+Std Test Accuracy: 0.1593
+Std Test AUC: 0.0578
+
+--- Round 227/500 ---
+Averaged Train Loss: 1.6231
+Averaged Test Accuracy: 0.3890
+Averaged Test AUC: 0.8419
+Std Test Accuracy: 0.2130
+Std Test AUC: 0.0581
+
+--- Round 228/500 ---
+Averaged Train Loss: 1.4516
+Averaged Test Accuracy: 0.4624
+Averaged Test AUC: 0.8511
+Std Test Accuracy: 0.1335
+Std Test AUC: 0.0433
+
+--- Round 229/500 ---
+Averaged Train Loss: 1.4543
+Averaged Test Accuracy: 0.4578
+Averaged Test AUC: 0.8495
+Std Test Accuracy: 0.1420
+Std Test AUC: 0.0502
+
+--- Round 230/500 ---
+Averaged Train Loss: 1.5471
+Averaged Test Accuracy: 0.4146
+Averaged Test AUC: 0.8404
+Std Test Accuracy: 0.1559
+Std Test AUC: 0.0524
+
+--- Round 231/500 ---
+Averaged Train Loss: 1.6459
+Averaged Test Accuracy: 0.3819
+Averaged Test AUC: 0.8371
+Std Test Accuracy: 0.2151
+Std Test AUC: 0.0637
+
+--- Round 232/500 ---
+Averaged Train Loss: 1.4413
+Averaged Test Accuracy: 0.4629
+Averaged Test AUC: 0.8523
+Std Test Accuracy: 0.1332
+Std Test AUC: 0.0400
+
+--- Round 233/500 ---
+Averaged Train Loss: 1.4146
+Averaged Test Accuracy: 0.4755
+Averaged Test AUC: 0.8560
+Std Test Accuracy: 0.0912
+Std Test AUC: 0.0309
+
+--- Round 234/500 ---
+Averaged Train Loss: 1.6368
+Averaged Test Accuracy: 0.3910
+Averaged Test AUC: 0.8297
+Std Test Accuracy: 0.1909
+Std Test AUC: 0.0693
+
+--- Round 235/500 ---
+Averaged Train Loss: 1.6750
+Averaged Test Accuracy: 0.3760
+Averaged Test AUC: 0.8344
+Std Test Accuracy: 0.2201
+Std Test AUC: 0.0702
+
+--- Round 236/500 ---
+Averaged Train Loss: 1.4460
+Averaged Test Accuracy: 0.4621
+Averaged Test AUC: 0.8524
+Std Test Accuracy: 0.1423
+Std Test AUC: 0.0425
+
+--- Round 237/500 ---
+Averaged Train Loss: 1.4140
+Averaged Test Accuracy: 0.4784
+Averaged Test AUC: 0.8568
+Std Test Accuracy: 0.0897
+Std Test AUC: 0.0297
+
+--- Round 238/500 ---
+Averaged Train Loss: 1.5702
+Averaged Test Accuracy: 0.4070
+Averaged Test AUC: 0.8367
+Std Test Accuracy: 0.1706
+Std Test AUC: 0.0579
+
+--- Round 239/500 ---
+Averaged Train Loss: 1.5543
+Averaged Test Accuracy: 0.4395
+Averaged Test AUC: 0.8437
+Std Test Accuracy: 0.1808
+Std Test AUC: 0.0635
+
+--- Round 240/500 ---
+Averaged Train Loss: 1.4463
+Averaged Test Accuracy: 0.4693
+Averaged Test AUC: 0.8506
+Std Test Accuracy: 0.1498
+Std Test AUC: 0.0497
+
+--- Round 241/500 ---
+Averaged Train Loss: 1.4528
+Averaged Test Accuracy: 0.4530
+Averaged Test AUC: 0.8508
+Std Test Accuracy: 0.1451
+Std Test AUC: 0.0423
+
+--- Round 242/500 ---
+Averaged Train Loss: 1.5741
+Averaged Test Accuracy: 0.4033
+Averaged Test AUC: 0.8367
+Std Test Accuracy: 0.1686
+Std Test AUC: 0.0548
+
+--- Round 243/500 ---
+Averaged Train Loss: 1.5175
+Averaged Test Accuracy: 0.4382
+Averaged Test AUC: 0.8487
+Std Test Accuracy: 0.1709
+Std Test AUC: 0.0509
+
+--- Round 244/500 ---
+Averaged Train Loss: 1.4533
+Averaged Test Accuracy: 0.4614
+Averaged Test AUC: 0.8509
+Std Test Accuracy: 0.1495
+Std Test AUC: 0.0470
+
+--- Round 245/500 ---
+Averaged Train Loss: 1.4323
+Averaged Test Accuracy: 0.4720
+Averaged Test AUC: 0.8525
+Std Test Accuracy: 0.1327
+Std Test AUC: 0.0467
+
+--- Round 246/500 ---
+Averaged Train Loss: 1.6097
+Averaged Test Accuracy: 0.3987
+Averaged Test AUC: 0.8310
+Std Test Accuracy: 0.1808
+Std Test AUC: 0.0699
+
+--- Round 247/500 ---
+Averaged Train Loss: 1.4964
+Averaged Test Accuracy: 0.4446
+Averaged Test AUC: 0.8497
+Std Test Accuracy: 0.1631
+Std Test AUC: 0.0551
+
+--- Round 248/500 ---
+Averaged Train Loss: 1.4403
+Averaged Test Accuracy: 0.4624
+Averaged Test AUC: 0.8530
+Std Test Accuracy: 0.1450
+Std Test AUC: 0.0452
+
+--- Round 249/500 ---
+Averaged Train Loss: 1.4078
+Averaged Test Accuracy: 0.4789
+Averaged Test AUC: 0.8571
+Std Test Accuracy: 0.0852
+Std Test AUC: 0.0293
+
+--- Round 250/500 ---
+Averaged Train Loss: 1.6393
+Averaged Test Accuracy: 0.3924
+Averaged Test AUC: 0.8290
+Std Test Accuracy: 0.1844
+Std Test AUC: 0.0732
+
+--- Round 251/500 ---
+Averaged Train Loss: 1.5841
+Averaged Test Accuracy: 0.4082
+Averaged Test AUC: 0.8435
+Std Test Accuracy: 0.2078
+Std Test AUC: 0.0582
+
+--- Round 252/500 ---
+Averaged Train Loss: 1.4554
+Averaged Test Accuracy: 0.4556
+Averaged Test AUC: 0.8518
+Std Test Accuracy: 0.1570
+Std Test AUC: 0.0450
+
+--- Round 253/500 ---
+Averaged Train Loss: 1.4342
+Averaged Test Accuracy: 0.4678
+Averaged Test AUC: 0.8538
+Std Test Accuracy: 0.1191
+Std Test AUC: 0.0400
+
+--- Round 254/500 ---
+Averaged Train Loss: 1.5553
+Averaged Test Accuracy: 0.4106
+Averaged Test AUC: 0.8400
+Std Test Accuracy: 0.1585
+Std Test AUC: 0.0511
+
+--- Round 255/500 ---
+Averaged Train Loss: 1.6335
+Averaged Test Accuracy: 0.3966
+Averaged Test AUC: 0.8374
+Std Test Accuracy: 0.2114
+Std Test AUC: 0.0597
+
+--- Round 256/500 ---
+Averaged Train Loss: 1.4384
+Averaged Test Accuracy: 0.4629
+Averaged Test AUC: 0.8533
+Std Test Accuracy: 0.1278
+Std Test AUC: 0.0376
+
+--- Round 257/500 ---
+Averaged Train Loss: 1.4526
+Averaged Test Accuracy: 0.4640
+Averaged Test AUC: 0.8538
+Std Test Accuracy: 0.1241
+Std Test AUC: 0.0415
+
+--- Round 258/500 ---
+Averaged Train Loss: 1.5208
+Averaged Test Accuracy: 0.4273
+Averaged Test AUC: 0.8432
+Std Test Accuracy: 0.1552
+Std Test AUC: 0.0519
+
+--- Round 259/500 ---
+Averaged Train Loss: 1.5633
+Averaged Test Accuracy: 0.4201
+Averaged Test AUC: 0.8452
+Std Test Accuracy: 0.1908
+Std Test AUC: 0.0515
+
+--- Round 260/500 ---
+Averaged Train Loss: 1.4421
+Averaged Test Accuracy: 0.4617
+Averaged Test AUC: 0.8526
+Std Test Accuracy: 0.1542
+Std Test AUC: 0.0470
+
+--- Round 261/500 ---
+Averaged Train Loss: 1.4327
+Averaged Test Accuracy: 0.4659
+Averaged Test AUC: 0.8549
+Std Test Accuracy: 0.1360
+Std Test AUC: 0.0401
+
+--- Round 262/500 ---
+Averaged Train Loss: 1.5282
+Averaged Test Accuracy: 0.4198
+Averaged Test AUC: 0.8445
+Std Test Accuracy: 0.1590
+Std Test AUC: 0.0489
+
+--- Round 263/500 ---
+Averaged Train Loss: 1.5223
+Averaged Test Accuracy: 0.4288
+Averaged Test AUC: 0.8497
+Std Test Accuracy: 0.1787
+Std Test AUC: 0.0478
+
+--- Round 264/500 ---
+Averaged Train Loss: 1.4729
+Averaged Test Accuracy: 0.4481
+Averaged Test AUC: 0.8500
+Std Test Accuracy: 0.1752
+Std Test AUC: 0.0515
+
+--- Round 265/500 ---
+Averaged Train Loss: 1.4218
+Averaged Test Accuracy: 0.4765
+Averaged Test AUC: 0.8573
+Std Test Accuracy: 0.1198
+Std Test AUC: 0.0374
+
+--- Round 266/500 ---
+Averaged Train Loss: 1.5664
+Averaged Test Accuracy: 0.4040
+Averaged Test AUC: 0.8401
+Std Test Accuracy: 0.1696
+Std Test AUC: 0.0502
+
+--- Round 267/500 ---
+Averaged Train Loss: 1.4838
+Averaged Test Accuracy: 0.4395
+Averaged Test AUC: 0.8537
+Std Test Accuracy: 0.1718
+Std Test AUC: 0.0446
+
+--- Round 268/500 ---
+Averaged Train Loss: 1.4324
+Averaged Test Accuracy: 0.4659
+Averaged Test AUC: 0.8543
+Std Test Accuracy: 0.1400
+Std Test AUC: 0.0431
+
+--- Round 269/500 ---
+Averaged Train Loss: 1.4644
+Averaged Test Accuracy: 0.4544
+Averaged Test AUC: 0.8528
+Std Test Accuracy: 0.1527
+Std Test AUC: 0.0468
+
+--- Round 270/500 ---
+Averaged Train Loss: 1.5707
+Averaged Test Accuracy: 0.4078
+Averaged Test AUC: 0.8394
+Std Test Accuracy: 0.1746
+Std Test AUC: 0.0566
+
+--- Round 271/500 ---
+Averaged Train Loss: 1.4975
+Averaged Test Accuracy: 0.4458
+Averaged Test AUC: 0.8493
+Std Test Accuracy: 0.1745
+Std Test AUC: 0.0550
+
+--- Round 272/500 ---
+Averaged Train Loss: 1.4389
+Averaged Test Accuracy: 0.4677
+Averaged Test AUC: 0.8543
+Std Test Accuracy: 0.1496
+Std Test AUC: 0.0463
+
+--- Round 273/500 ---
+Averaged Train Loss: 1.4346
+Averaged Test Accuracy: 0.4708
+Averaged Test AUC: 0.8562
+Std Test Accuracy: 0.1254
+Std Test AUC: 0.0390
+
+--- Round 274/500 ---
+Averaged Train Loss: 1.5500
+Averaged Test Accuracy: 0.4221
+Averaged Test AUC: 0.8403
+Std Test Accuracy: 0.1629
+Std Test AUC: 0.0608
+
+--- Round 275/500 ---
+Averaged Train Loss: 1.6445
+Averaged Test Accuracy: 0.4029
+Averaged Test AUC: 0.8391
+Std Test Accuracy: 0.2101
+Std Test AUC: 0.0560
+
+--- Round 276/500 ---
+Averaged Train Loss: 1.4939
+Averaged Test Accuracy: 0.4370
+Averaged Test AUC: 0.8499
+Std Test Accuracy: 0.1866
+Std Test AUC: 0.0458
+
+--- Round 277/500 ---
+Averaged Train Loss: 1.4246
+Averaged Test Accuracy: 0.4758
+Averaged Test AUC: 0.8570
+Std Test Accuracy: 0.1260
+Std Test AUC: 0.0385
+
+--- Round 278/500 ---
+Averaged Train Loss: 1.5568
+Averaged Test Accuracy: 0.4210
+Averaged Test AUC: 0.8391
+Std Test Accuracy: 0.1555
+Std Test AUC: 0.0577
+
+--- Round 279/500 ---
+Averaged Train Loss: 1.4688
+Averaged Test Accuracy: 0.4554
+Averaged Test AUC: 0.8520
+Std Test Accuracy: 0.1628
+Std Test AUC: 0.0496
+
+--- Round 280/500 ---
+Averaged Train Loss: 1.4302
+Averaged Test Accuracy: 0.4699
+Averaged Test AUC: 0.8547
+Std Test Accuracy: 0.1457
+Std Test AUC: 0.0452
+
+--- Round 281/500 ---
+Averaged Train Loss: 1.4163
+Averaged Test Accuracy: 0.4760
+Averaged Test AUC: 0.8572
+Std Test Accuracy: 0.1323
+Std Test AUC: 0.0413
+
+--- Round 282/500 ---
+Averaged Train Loss: 1.5550
+Averaged Test Accuracy: 0.4228
+Averaged Test AUC: 0.8408
+Std Test Accuracy: 0.1705
+Std Test AUC: 0.0645
+
+--- Round 283/500 ---
+Averaged Train Loss: 1.4983
+Averaged Test Accuracy: 0.4399
+Averaged Test AUC: 0.8520
+Std Test Accuracy: 0.1873
+Std Test AUC: 0.0515
+
+--- Round 284/500 ---
+Averaged Train Loss: 1.4358
+Averaged Test Accuracy: 0.4637
+Averaged Test AUC: 0.8540
+Std Test Accuracy: 0.1484
+Std Test AUC: 0.0457
+
+--- Round 285/500 ---
+Averaged Train Loss: 1.4005
+Averaged Test Accuracy: 0.4868
+Averaged Test AUC: 0.8586
+Std Test Accuracy: 0.1155
+Std Test AUC: 0.0390
+
+--- Round 286/500 ---
+Averaged Train Loss: 1.5680
+Averaged Test Accuracy: 0.4127
+Averaged Test AUC: 0.8373
+Std Test Accuracy: 0.1748
+Std Test AUC: 0.0638
+
+--- Round 287/500 ---
+Averaged Train Loss: 1.5749
+Averaged Test Accuracy: 0.4173
+Averaged Test AUC: 0.8437
+Std Test Accuracy: 0.1905
+Std Test AUC: 0.0561
+
+--- Round 288/500 ---
+Averaged Train Loss: 1.4212
+Averaged Test Accuracy: 0.4726
+Averaged Test AUC: 0.8553
+Std Test Accuracy: 0.1416
+Std Test AUC: 0.0409
+
+--- Round 289/500 ---
+Averaged Train Loss: 1.4043
+Averaged Test Accuracy: 0.4849
+Averaged Test AUC: 0.8604
+Std Test Accuracy: 0.1132
+Std Test AUC: 0.0357
+
+--- Round 290/500 ---
+Averaged Train Loss: 1.5796
+Averaged Test Accuracy: 0.4077
+Averaged Test AUC: 0.8386
+Std Test Accuracy: 0.1786
+Std Test AUC: 0.0596
+
+--- Round 291/500 ---
+Averaged Train Loss: 1.4663
+Averaged Test Accuracy: 0.4580
+Averaged Test AUC: 0.8519
+Std Test Accuracy: 0.1465
+Std Test AUC: 0.0478
+
+--- Round 292/500 ---
+Averaged Train Loss: 1.3928
+Averaged Test Accuracy: 0.4877
+Averaged Test AUC: 0.8572
+Std Test Accuracy: 0.1216
+Std Test AUC: 0.0408
+
+--- Round 293/500 ---
+Averaged Train Loss: 1.4169
+Averaged Test Accuracy: 0.4818
+Averaged Test AUC: 0.8579
+Std Test Accuracy: 0.1139
+Std Test AUC: 0.0386
+
+--- Round 294/500 ---
+Averaged Train Loss: 1.5179
+Averaged Test Accuracy: 0.4284
+Averaged Test AUC: 0.8450
+Std Test Accuracy: 0.1560
+Std Test AUC: 0.0493
+
+--- Round 295/500 ---
+Averaged Train Loss: 1.5745
+Averaged Test Accuracy: 0.4110
+Averaged Test AUC: 0.8450
+Std Test Accuracy: 0.2075
+Std Test AUC: 0.0548
+
+--- Round 296/500 ---
+Averaged Train Loss: 1.4423
+Averaged Test Accuracy: 0.4584
+Averaged Test AUC: 0.8530
+Std Test Accuracy: 0.1472
+Std Test AUC: 0.0438
+
+--- Round 297/500 ---
+Averaged Train Loss: 1.3967
+Averaged Test Accuracy: 0.4875
+Averaged Test AUC: 0.8610
+Std Test Accuracy: 0.1086
+Std Test AUC: 0.0340
+
+--- Round 298/500 ---
+Averaged Train Loss: 1.5669
+Averaged Test Accuracy: 0.4125
+Averaged Test AUC: 0.8397
+Std Test Accuracy: 0.1759
+Std Test AUC: 0.0596
+
+--- Round 299/500 ---
+Averaged Train Loss: 1.4926
+Averaged Test Accuracy: 0.4414
+Averaged Test AUC: 0.8521
+Std Test Accuracy: 0.1902
+Std Test AUC: 0.0519
+
+--- Round 300/500 ---
+Averaged Train Loss: 1.4018
+Averaged Test Accuracy: 0.4796
+Averaged Test AUC: 0.8578
+Std Test Accuracy: 0.1345
+Std Test AUC: 0.0426
+
+--- Round 301/500 ---
+Averaged Train Loss: 1.4113
+Averaged Test Accuracy: 0.4821
+Averaged Test AUC: 0.8585
+Std Test Accuracy: 0.1154
+Std Test AUC: 0.0374
+
+--- Round 302/500 ---
+Averaged Train Loss: 1.6396
+Averaged Test Accuracy: 0.3958
+Averaged Test AUC: 0.8336
+Std Test Accuracy: 0.1882
+Std Test AUC: 0.0674
+
+--- Round 303/500 ---
+Averaged Train Loss: 1.6208
+Averaged Test Accuracy: 0.4116
+Averaged Test AUC: 0.8432
+Std Test Accuracy: 0.2091
+Std Test AUC: 0.0560
+
+--- Round 304/500 ---
+Averaged Train Loss: 1.4698
+Averaged Test Accuracy: 0.4509
+Averaged Test AUC: 0.8523
+Std Test Accuracy: 0.1769
+Std Test AUC: 0.0486
+
+--- Round 305/500 ---
+Averaged Train Loss: 1.4147
+Averaged Test Accuracy: 0.4790
+Averaged Test AUC: 0.8585
+Std Test Accuracy: 0.1144
+Std Test AUC: 0.0385
+
+--- Round 306/500 ---
+Averaged Train Loss: 1.5087
+Averaged Test Accuracy: 0.4393
+Averaged Test AUC: 0.8456
+Std Test Accuracy: 0.1583
+Std Test AUC: 0.0575
+
+--- Round 307/500 ---
+Averaged Train Loss: 1.6862
+Averaged Test Accuracy: 0.4006
+Averaged Test AUC: 0.8390
+Std Test Accuracy: 0.2188
+Std Test AUC: 0.0570
+
+--- Round 308/500 ---
+Averaged Train Loss: 1.5094
+Averaged Test Accuracy: 0.4381
+Averaged Test AUC: 0.8486
+Std Test Accuracy: 0.1820
+Std Test AUC: 0.0514
+
+--- Round 309/500 ---
+Averaged Train Loss: 1.4198
+Averaged Test Accuracy: 0.4787
+Averaged Test AUC: 0.8586
+Std Test Accuracy: 0.1215
+Std Test AUC: 0.0381
+
+--- Round 310/500 ---
+Averaged Train Loss: 1.5610
+Averaged Test Accuracy: 0.4141
+Averaged Test AUC: 0.8400
+Std Test Accuracy: 0.1670
+Std Test AUC: 0.0588
+
+--- Round 311/500 ---
+Averaged Train Loss: 1.5883
+Averaged Test Accuracy: 0.4195
+Averaged Test AUC: 0.8452
+Std Test Accuracy: 0.2053
+Std Test AUC: 0.0572
+
+--- Round 312/500 ---
+Averaged Train Loss: 1.4115
+Averaged Test Accuracy: 0.4747
+Averaged Test AUC: 0.8579
+Std Test Accuracy: 0.1295
+Std Test AUC: 0.0356
+
+--- Round 313/500 ---
+Averaged Train Loss: 1.4105
+Averaged Test Accuracy: 0.4814
+Averaged Test AUC: 0.8590
+Std Test Accuracy: 0.1190
+Std Test AUC: 0.0377
+
+--- Round 314/500 ---
+Averaged Train Loss: 1.5651
+Averaged Test Accuracy: 0.4120
+Averaged Test AUC: 0.8394
+Std Test Accuracy: 0.1718
+Std Test AUC: 0.0610
+
+--- Round 315/500 ---
+Averaged Train Loss: 1.5079
+Averaged Test Accuracy: 0.4290
+Averaged Test AUC: 0.8505
+Std Test Accuracy: 0.1827
+Std Test AUC: 0.0453
+
+--- Round 316/500 ---
+Averaged Train Loss: 1.4193
+Averaged Test Accuracy: 0.4709
+Averaged Test AUC: 0.8558
+Std Test Accuracy: 0.1367
+Std Test AUC: 0.0408
+
+--- Round 317/500 ---
+Averaged Train Loss: 1.4104
+Averaged Test Accuracy: 0.4781
+Averaged Test AUC: 0.8584
+Std Test Accuracy: 0.1245
+Std Test AUC: 0.0382
+
+--- Round 318/500 ---
+Averaged Train Loss: 1.5157
+Averaged Test Accuracy: 0.4236
+Averaged Test AUC: 0.8460
+Std Test Accuracy: 0.1678
+Std Test AUC: 0.0475
+
+--- Round 319/500 ---
+Averaged Train Loss: 1.4659
+Averaged Test Accuracy: 0.4569
+Averaged Test AUC: 0.8547
+Std Test Accuracy: 0.1685
+Std Test AUC: 0.0494
+
+--- Round 320/500 ---
+Averaged Train Loss: 1.4145
+Averaged Test Accuracy: 0.4791
+Averaged Test AUC: 0.8555
+Std Test Accuracy: 0.1334
+Std Test AUC: 0.0456
+
+--- Round 321/500 ---
+Averaged Train Loss: 1.4121
+Averaged Test Accuracy: 0.4815
+Averaged Test AUC: 0.8586
+Std Test Accuracy: 0.1160
+Std Test AUC: 0.0389
+
+--- Round 322/500 ---
+Averaged Train Loss: 1.5724
+Averaged Test Accuracy: 0.4092
+Averaged Test AUC: 0.8410
+Std Test Accuracy: 0.1668
+Std Test AUC: 0.0536
+
+--- Round 323/500 ---
+Averaged Train Loss: 1.5706
+Averaged Test Accuracy: 0.4212
+Averaged Test AUC: 0.8456
+Std Test Accuracy: 0.2010
+Std Test AUC: 0.0571
+
+--- Round 324/500 ---
+Averaged Train Loss: 1.4015
+Averaged Test Accuracy: 0.4793
+Averaged Test AUC: 0.8581
+Std Test Accuracy: 0.1332
+Std Test AUC: 0.0399
+
+--- Round 325/500 ---
+Averaged Train Loss: 1.3943
+Averaged Test Accuracy: 0.4888
+Averaged Test AUC: 0.8597
+Std Test Accuracy: 0.1215
+Std Test AUC: 0.0386
+
+--- Round 326/500 ---
+Averaged Train Loss: 1.5472
+Averaged Test Accuracy: 0.4095
+Averaged Test AUC: 0.8430
+Std Test Accuracy: 0.1551
+Std Test AUC: 0.0449
+
+--- Round 327/500 ---
+Averaged Train Loss: 1.5178
+Averaged Test Accuracy: 0.4311
+Averaged Test AUC: 0.8512
+Std Test Accuracy: 0.2011
+Std Test AUC: 0.0556
+
+--- Round 328/500 ---
+Averaged Train Loss: 1.3792
+Averaged Test Accuracy: 0.4924
+Averaged Test AUC: 0.8591
+Std Test Accuracy: 0.1185
+Std Test AUC: 0.0403
+
+--- Round 329/500 ---
+Averaged Train Loss: 1.3947
+Averaged Test Accuracy: 0.4879
+Averaged Test AUC: 0.8601
+Std Test Accuracy: 0.1132
+Std Test AUC: 0.0378
+
+--- Round 330/500 ---
+Averaged Train Loss: 1.5133
+Averaged Test Accuracy: 0.4330
+Averaged Test AUC: 0.8471
+Std Test Accuracy: 0.1527
+Std Test AUC: 0.0498
+
+--- Round 331/500 ---
+Averaged Train Loss: 1.5380
+Averaged Test Accuracy: 0.4262
+Averaged Test AUC: 0.8488
+Std Test Accuracy: 0.2040
+Std Test AUC: 0.0578
+
+--- Round 332/500 ---
+Averaged Train Loss: 1.3857
+Averaged Test Accuracy: 0.4856
+Averaged Test AUC: 0.8597
+Std Test Accuracy: 0.1230
+Std Test AUC: 0.0379
+
+--- Round 333/500 ---
+Averaged Train Loss: 1.3948
+Averaged Test Accuracy: 0.4871
+Averaged Test AUC: 0.8609
+Std Test Accuracy: 0.1111
+Std Test AUC: 0.0364
+
+--- Round 334/500 ---
+Averaged Train Loss: 1.5495
+Averaged Test Accuracy: 0.4158
+Averaged Test AUC: 0.8425
+Std Test Accuracy: 0.1625
+Std Test AUC: 0.0528
+
+--- Round 335/500 ---
+Averaged Train Loss: 1.5269
+Averaged Test Accuracy: 0.4385
+Averaged Test AUC: 0.8474
+Std Test Accuracy: 0.1859
+Std Test AUC: 0.0547
+
+--- Round 336/500 ---
+Averaged Train Loss: 1.3889
+Averaged Test Accuracy: 0.4860
+Averaged Test AUC: 0.8589
+Std Test Accuracy: 0.1249
+Std Test AUC: 0.0385
+
+--- Round 337/500 ---
+Averaged Train Loss: 1.3920
+Averaged Test Accuracy: 0.4842
+Averaged Test AUC: 0.8601
+Std Test Accuracy: 0.1231
+Std Test AUC: 0.0357
+
+--- Round 338/500 ---
+Averaged Train Loss: 1.5065
+Averaged Test Accuracy: 0.4332
+Averaged Test AUC: 0.8492
+Std Test Accuracy: 0.1559
+Std Test AUC: 0.0485
+
+--- Round 339/500 ---
+Averaged Train Loss: 1.5233
+Averaged Test Accuracy: 0.4422
+Averaged Test AUC: 0.8479
+Std Test Accuracy: 0.1919
+Std Test AUC: 0.0650
+
+--- Round 340/500 ---
+Averaged Train Loss: 1.4023
+Averaged Test Accuracy: 0.4796
+Averaged Test AUC: 0.8584
+Std Test Accuracy: 0.1396
+Std Test AUC: 0.0423
+
+--- Round 341/500 ---
+Averaged Train Loss: 1.3994
+Averaged Test Accuracy: 0.4849
+Averaged Test AUC: 0.8602
+Std Test Accuracy: 0.1139
+Std Test AUC: 0.0377
+
+--- Round 342/500 ---
+Averaged Train Loss: 1.6603
+Averaged Test Accuracy: 0.3919
+Averaged Test AUC: 0.8341
+Std Test Accuracy: 0.2036
+Std Test AUC: 0.0688
+
+--- Round 343/500 ---
+Averaged Train Loss: 1.5351
+Averaged Test Accuracy: 0.4371
+Averaged Test AUC: 0.8480
+Std Test Accuracy: 0.1893
+Std Test AUC: 0.0557
+
+--- Round 344/500 ---
+Averaged Train Loss: 1.4431
+Averaged Test Accuracy: 0.4637
+Averaged Test AUC: 0.8535
+Std Test Accuracy: 0.1608
+Std Test AUC: 0.0460
+
+--- Round 345/500 ---
+Averaged Train Loss: 1.4000
+Averaged Test Accuracy: 0.4790
+Averaged Test AUC: 0.8587
+Std Test Accuracy: 0.1238
+Std Test AUC: 0.0375
+
+--- Round 346/500 ---
+Averaged Train Loss: 1.5800
+Averaged Test Accuracy: 0.4154
+Averaged Test AUC: 0.8386
+Std Test Accuracy: 0.1865
+Std Test AUC: 0.0604
+
+--- Round 347/500 ---
+Averaged Train Loss: 1.5548
+Averaged Test Accuracy: 0.4292
+Averaged Test AUC: 0.8493
+Std Test Accuracy: 0.1920
+Std Test AUC: 0.0521
+
+--- Round 348/500 ---
+Averaged Train Loss: 1.3988
+Averaged Test Accuracy: 0.4754
+Averaged Test AUC: 0.8587
+Std Test Accuracy: 0.1419
+Std Test AUC: 0.0386
+
+--- Round 349/500 ---
+Averaged Train Loss: 1.3739
+Averaged Test Accuracy: 0.4950
+Averaged Test AUC: 0.8623
+Std Test Accuracy: 0.1071
+Std Test AUC: 0.0351
+
+--- Round 350/500 ---
+Averaged Train Loss: 1.5451
+Averaged Test Accuracy: 0.4187
+Averaged Test AUC: 0.8427
+Std Test Accuracy: 0.1826
+Std Test AUC: 0.0570
+
+--- Round 351/500 ---
+Averaged Train Loss: 1.4597
+Averaged Test Accuracy: 0.4593
+Averaged Test AUC: 0.8566
+Std Test Accuracy: 0.1738
+Std Test AUC: 0.0506
+
+--- Round 352/500 ---
+Averaged Train Loss: 1.3917
+Averaged Test Accuracy: 0.4872
+Averaged Test AUC: 0.8600
+Std Test Accuracy: 0.1469
+Std Test AUC: 0.0454
+
+--- Round 353/500 ---
+Averaged Train Loss: 1.3780
+Averaged Test Accuracy: 0.4934
+Averaged Test AUC: 0.8631
+Std Test Accuracy: 0.1106
+Std Test AUC: 0.0342
+
+--- Round 354/500 ---
+Averaged Train Loss: 1.5613
+Averaged Test Accuracy: 0.4089
+Averaged Test AUC: 0.8427
+Std Test Accuracy: 0.1741
+Std Test AUC: 0.0515
+
+--- Round 355/500 ---
+Averaged Train Loss: 1.4986
+Averaged Test Accuracy: 0.4387
+Averaged Test AUC: 0.8498
+Std Test Accuracy: 0.1951
+Std Test AUC: 0.0589
+
+--- Round 356/500 ---
+Averaged Train Loss: 1.4227
+Averaged Test Accuracy: 0.4699
+Averaged Test AUC: 0.8544
+Std Test Accuracy: 0.1614
+Std Test AUC: 0.0552
+
+--- Round 357/500 ---
+Averaged Train Loss: 1.3852
+Averaged Test Accuracy: 0.4880
+Averaged Test AUC: 0.8619
+Std Test Accuracy: 0.1172
+Std Test AUC: 0.0363
+
+--- Round 358/500 ---
+Averaged Train Loss: 1.5024
+Averaged Test Accuracy: 0.4393
+Averaged Test AUC: 0.8492
+Std Test Accuracy: 0.1538
+Std Test AUC: 0.0512
+
+--- Round 359/500 ---
+Averaged Train Loss: 1.4453
+Averaged Test Accuracy: 0.4651
+Averaged Test AUC: 0.8560
+Std Test Accuracy: 0.1743
+Std Test AUC: 0.0522
+
+--- Round 360/500 ---
+Averaged Train Loss: 1.3914
+Averaged Test Accuracy: 0.4851
+Averaged Test AUC: 0.8593
+Std Test Accuracy: 0.1415
+Std Test AUC: 0.0436
+
+--- Round 361/500 ---
+Averaged Train Loss: 1.3891
+Averaged Test Accuracy: 0.4883
+Averaged Test AUC: 0.8613
+Std Test Accuracy: 0.1247
+Std Test AUC: 0.0396
+
+--- Round 362/500 ---
+Averaged Train Loss: 1.5354
+Averaged Test Accuracy: 0.4259
+Averaged Test AUC: 0.8437
+Std Test Accuracy: 0.1616
+Std Test AUC: 0.0574
+
+--- Round 363/500 ---
+Averaged Train Loss: 1.5543
+Averaged Test Accuracy: 0.4357
+Averaged Test AUC: 0.8460
+Std Test Accuracy: 0.2013
+Std Test AUC: 0.0618
+
+--- Round 364/500 ---
+Averaged Train Loss: 1.4181
+Averaged Test Accuracy: 0.4663
+Averaged Test AUC: 0.8572
+Std Test Accuracy: 0.1662
+Std Test AUC: 0.0437
+
+--- Round 365/500 ---
+Averaged Train Loss: 1.3928
+Averaged Test Accuracy: 0.4834
+Averaged Test AUC: 0.8615
+Std Test Accuracy: 0.1249
+Std Test AUC: 0.0377
+
+--- Round 366/500 ---
+Averaged Train Loss: 1.4952
+Averaged Test Accuracy: 0.4410
+Averaged Test AUC: 0.8500
+Std Test Accuracy: 0.1512
+Std Test AUC: 0.0497
+
+--- Round 367/500 ---
+Averaged Train Loss: 1.6235
+Averaged Test Accuracy: 0.4192
+Averaged Test AUC: 0.8424
+Std Test Accuracy: 0.2168
+Std Test AUC: 0.0682
+
+--- Round 368/500 ---
+Averaged Train Loss: 1.3877
+Averaged Test Accuracy: 0.4829
+Averaged Test AUC: 0.8608
+Std Test Accuracy: 0.1473
+Std Test AUC: 0.0403
+
+--- Round 369/500 ---
+Averaged Train Loss: 1.3859
+Averaged Test Accuracy: 0.4905
+Averaged Test AUC: 0.8626
+Std Test Accuracy: 0.1162
+Std Test AUC: 0.0386
+
+--- Round 370/500 ---
+Averaged Train Loss: 1.4825
+Averaged Test Accuracy: 0.4346
+Averaged Test AUC: 0.8497
+Std Test Accuracy: 0.1495
+Std Test AUC: 0.0431
+
+--- Round 371/500 ---
+Averaged Train Loss: 1.5503
+Averaged Test Accuracy: 0.4238
+Averaged Test AUC: 0.8483
+Std Test Accuracy: 0.2038
+Std Test AUC: 0.0537
+
+--- Round 372/500 ---
+Averaged Train Loss: 1.4055
+Averaged Test Accuracy: 0.4771
+Averaged Test AUC: 0.8595
+Std Test Accuracy: 0.1486
+Std Test AUC: 0.0414
+
+--- Round 373/500 ---
+Averaged Train Loss: 1.3817
+Averaged Test Accuracy: 0.4934
+Averaged Test AUC: 0.8627
+Std Test Accuracy: 0.1074
+Std Test AUC: 0.0365
+
+--- Round 374/500 ---
+Averaged Train Loss: 1.5237
+Averaged Test Accuracy: 0.4222
+Averaged Test AUC: 0.8458
+Std Test Accuracy: 0.1499
+Std Test AUC: 0.0474
+
+--- Round 375/500 ---
+Averaged Train Loss: 1.6338
+Averaged Test Accuracy: 0.3935
+Averaged Test AUC: 0.8451
+Std Test Accuracy: 0.2284
+Std Test AUC: 0.0616
+
+--- Round 376/500 ---
+Averaged Train Loss: 1.4030
+Averaged Test Accuracy: 0.4715
+Averaged Test AUC: 0.8580
+Std Test Accuracy: 0.1450
+Std Test AUC: 0.0466
+
+--- Round 377/500 ---
+Averaged Train Loss: 1.3498
+Averaged Test Accuracy: 0.5065
+Averaged Test AUC: 0.8659
+Std Test Accuracy: 0.1117
+Std Test AUC: 0.0324
+
+--- Round 378/500 ---
+Averaged Train Loss: 1.5107
+Averaged Test Accuracy: 0.4345
+Averaged Test AUC: 0.8469
+Std Test Accuracy: 0.1651
+Std Test AUC: 0.0569
+
+--- Round 379/500 ---
+Averaged Train Loss: 1.5565
+Averaged Test Accuracy: 0.4284
+Averaged Test AUC: 0.8488
+Std Test Accuracy: 0.2026
+Std Test AUC: 0.0538
+
+--- Round 380/500 ---
+Averaged Train Loss: 1.4046
+Averaged Test Accuracy: 0.4766
+Averaged Test AUC: 0.8584
+Std Test Accuracy: 0.1494
+Std Test AUC: 0.0419
+
+--- Round 381/500 ---
+Averaged Train Loss: 1.3728
+Averaged Test Accuracy: 0.4959
+Averaged Test AUC: 0.8630
+Std Test Accuracy: 0.1141
+Std Test AUC: 0.0343
+
+--- Round 382/500 ---
+Averaged Train Loss: 1.5330
+Averaged Test Accuracy: 0.4274
+Averaged Test AUC: 0.8446
+Std Test Accuracy: 0.1647
+Std Test AUC: 0.0572
+
+--- Round 383/500 ---
+Averaged Train Loss: 1.4896
+Averaged Test Accuracy: 0.4386
+Averaged Test AUC: 0.8534
+Std Test Accuracy: 0.1860
+Std Test AUC: 0.0468
+
+--- Round 384/500 ---
+Averaged Train Loss: 1.3666
+Averaged Test Accuracy: 0.4943
+Averaged Test AUC: 0.8616
+Std Test Accuracy: 0.1300
+Std Test AUC: 0.0416
+
+--- Round 385/500 ---
+Averaged Train Loss: 1.4161
+Averaged Test Accuracy: 0.4751
+Averaged Test AUC: 0.8596
+Std Test Accuracy: 0.1498
+Std Test AUC: 0.0424
+
+--- Round 386/500 ---
+Averaged Train Loss: 1.4890
+Averaged Test Accuracy: 0.4335
+Averaged Test AUC: 0.8504
+Std Test Accuracy: 0.1515
+Std Test AUC: 0.0456
+
+--- Round 387/500 ---
+Averaged Train Loss: 1.5167
+Averaged Test Accuracy: 0.4367
+Averaged Test AUC: 0.8506
+Std Test Accuracy: 0.1990
+Std Test AUC: 0.0587
+
+--- Round 388/500 ---
+Averaged Train Loss: 1.4001
+Averaged Test Accuracy: 0.4792
+Averaged Test AUC: 0.8587
+Std Test Accuracy: 0.1514
+Std Test AUC: 0.0482
+
+--- Round 389/500 ---
+Averaged Train Loss: 1.3632
+Averaged Test Accuracy: 0.5012
+Averaged Test AUC: 0.8642
+Std Test Accuracy: 0.1201
+Std Test AUC: 0.0358
+
+--- Round 390/500 ---
+Averaged Train Loss: 1.4243
+Averaged Test Accuracy: 0.4625
+Averaged Test AUC: 0.8579
+Std Test Accuracy: 0.1341
+Std Test AUC: 0.0381
+
+--- Round 391/500 ---
+Averaged Train Loss: 1.5323
+Averaged Test Accuracy: 0.4321
+Averaged Test AUC: 0.8501
+Std Test Accuracy: 0.2083
+Std Test AUC: 0.0601
+
+--- Round 392/500 ---
+Averaged Train Loss: 1.3872
+Averaged Test Accuracy: 0.4861
+Averaged Test AUC: 0.8606
+Std Test Accuracy: 0.1371
+Std Test AUC: 0.0428
+
+--- Round 393/500 ---
+Averaged Train Loss: 1.3748
+Averaged Test Accuracy: 0.4927
+Averaged Test AUC: 0.8644
+Std Test Accuracy: 0.1169
+Std Test AUC: 0.0347
+
+--- Round 394/500 ---
+Averaged Train Loss: 1.5254
+Averaged Test Accuracy: 0.4224
+Averaged Test AUC: 0.8478
+Std Test Accuracy: 0.1581
+Std Test AUC: 0.0463
+
+--- Round 395/500 ---
+Averaged Train Loss: 1.5067
+Averaged Test Accuracy: 0.4284
+Averaged Test AUC: 0.8507
+Std Test Accuracy: 0.1927
+Std Test AUC: 0.0518
+
+--- Round 396/500 ---
+Averaged Train Loss: 1.3830
+Averaged Test Accuracy: 0.4878
+Averaged Test AUC: 0.8598
+Std Test Accuracy: 0.1364
+Std Test AUC: 0.0407
+
+--- Round 397/500 ---
+Averaged Train Loss: 1.3652
+Averaged Test Accuracy: 0.5001
+Averaged Test AUC: 0.8641
+Std Test Accuracy: 0.1047
+Std Test AUC: 0.0357
+
+--- Round 398/500 ---
+Averaged Train Loss: 1.4508
+Averaged Test Accuracy: 0.4491
+Averaged Test AUC: 0.8543
+Std Test Accuracy: 0.1526
+Std Test AUC: 0.0382
+
+--- Round 399/500 ---
+Averaged Train Loss: 1.7982
+Averaged Test Accuracy: 0.3451
+Averaged Test AUC: 0.8328
+Std Test Accuracy: 0.2578
+Std Test AUC: 0.0725
+
+--- Round 400/500 ---
+Averaged Train Loss: 1.3909
+Averaged Test Accuracy: 0.4795
+Averaged Test AUC: 0.8604
+Std Test Accuracy: 0.1391
+Std Test AUC: 0.0389
+
+--- Round 401/500 ---
+Averaged Train Loss: 1.4162
+Averaged Test Accuracy: 0.4713
+Averaged Test AUC: 0.8584
+Std Test Accuracy: 0.1526
+Std Test AUC: 0.0427
+
+--- Round 402/500 ---
+Averaged Train Loss: 1.4569
+Averaged Test Accuracy: 0.4544
+Averaged Test AUC: 0.8505
+Std Test Accuracy: 0.1458
+Std Test AUC: 0.0526
+
+--- Round 403/500 ---
+Averaged Train Loss: 1.5021
+Averaged Test Accuracy: 0.4397
+Averaged Test AUC: 0.8500
+Std Test Accuracy: 0.1845
+Std Test AUC: 0.0607
+
+--- Round 404/500 ---
+Averaged Train Loss: 1.3586
+Averaged Test Accuracy: 0.5013
+Averaged Test AUC: 0.8611
+Std Test Accuracy: 0.1322
+Std Test AUC: 0.0449
+
+--- Round 405/500 ---
+Averaged Train Loss: 1.3796
+Averaged Test Accuracy: 0.4914
+Averaged Test AUC: 0.8626
+Std Test Accuracy: 0.1380
+Std Test AUC: 0.0383
+
+--- Round 406/500 ---
+Averaged Train Loss: 1.4134
+Averaged Test Accuracy: 0.4755
+Averaged Test AUC: 0.8580
+Std Test Accuracy: 0.1565
+Std Test AUC: 0.0525
+
+--- Round 407/500 ---
+Averaged Train Loss: 1.4401
+Averaged Test Accuracy: 0.4741
+Averaged Test AUC: 0.8583
+Std Test Accuracy: 0.1837
+Std Test AUC: 0.0541
+
+--- Round 408/500 ---
+Averaged Train Loss: 1.4320
+Averaged Test Accuracy: 0.4655
+Averaged Test AUC: 0.8551
+Std Test Accuracy: 0.1682
+Std Test AUC: 0.0473
+
+--- Round 409/500 ---
+Averaged Train Loss: 1.4397
+Averaged Test Accuracy: 0.4693
+Averaged Test AUC: 0.8599
+Std Test Accuracy: 0.1847
+Std Test AUC: 0.0485
+
+--- Round 410/500 ---
+Averaged Train Loss: 1.5198
+Averaged Test Accuracy: 0.4355
+Averaged Test AUC: 0.8504
+Std Test Accuracy: 0.2062
+Std Test AUC: 0.0543
+
+--- Round 411/500 ---
+Averaged Train Loss: 1.4259
+Averaged Test Accuracy: 0.4661
+Averaged Test AUC: 0.8589
+Std Test Accuracy: 0.1923
+Std Test AUC: 0.0510
+
+--- Round 412/500 ---
+Averaged Train Loss: 1.4065
+Averaged Test Accuracy: 0.4764
+Averaged Test AUC: 0.8594
+Std Test Accuracy: 0.1600
+Std Test AUC: 0.0494
+
+--- Round 413/500 ---
+Averaged Train Loss: 1.4568
+Averaged Test Accuracy: 0.4556
+Averaged Test AUC: 0.8530
+Std Test Accuracy: 0.1955
+Std Test AUC: 0.0588
+
+--- Round 414/500 ---
+Averaged Train Loss: 1.4232
+Averaged Test Accuracy: 0.4697
+Averaged Test AUC: 0.8570
+Std Test Accuracy: 0.1696
+Std Test AUC: 0.0524
+
+--- Round 415/500 ---
+Averaged Train Loss: 1.3921
+Averaged Test Accuracy: 0.4847
+Averaged Test AUC: 0.8600
+Std Test Accuracy: 0.1688
+Std Test AUC: 0.0462
+
+--- Round 416/500 ---
+Averaged Train Loss: 1.4832
+Averaged Test Accuracy: 0.4548
+Averaged Test AUC: 0.8483
+Std Test Accuracy: 0.1962
+Std Test AUC: 0.0628
+
+--- Round 417/500 ---
+Averaged Train Loss: 1.4146
+Averaged Test Accuracy: 0.4826
+Averaged Test AUC: 0.8586
+Std Test Accuracy: 0.1614
+Std Test AUC: 0.0491
+
+--- Round 418/500 ---
+Averaged Train Loss: 1.4653
+Averaged Test Accuracy: 0.4590
+Averaged Test AUC: 0.8502
+Std Test Accuracy: 0.1907
+Std Test AUC: 0.0613
+
+--- Round 419/500 ---
+Averaged Train Loss: 1.4019
+Averaged Test Accuracy: 0.4838
+Averaged Test AUC: 0.8584
+Std Test Accuracy: 0.1633
+Std Test AUC: 0.0523
+
+--- Round 420/500 ---
+Averaged Train Loss: 1.5143
+Averaged Test Accuracy: 0.4453
+Averaged Test AUC: 0.8437
+Std Test Accuracy: 0.2091
+Std Test AUC: 0.0763
+
+--- Round 421/500 ---
+Averaged Train Loss: 1.3840
+Averaged Test Accuracy: 0.4858
+Averaged Test AUC: 0.8607
+Std Test Accuracy: 0.1505
+Std Test AUC: 0.0427
+
+--- Round 422/500 ---
+Averaged Train Loss: 1.4976
+Averaged Test Accuracy: 0.4533
+Averaged Test AUC: 0.8465
+Std Test Accuracy: 0.2001
+Std Test AUC: 0.0712
+
+--- Round 423/500 ---
+Averaged Train Loss: 1.3665
+Averaged Test Accuracy: 0.4973
+Averaged Test AUC: 0.8653
+Std Test Accuracy: 0.1542
+Std Test AUC: 0.0412
+
+--- Round 424/500 ---
+Averaged Train Loss: 1.4247
+Averaged Test Accuracy: 0.4730
+Averaged Test AUC: 0.8559
+Std Test Accuracy: 0.1755
+Std Test AUC: 0.0526
+
+--- Round 425/500 ---
+Averaged Train Loss: 1.3858
+Averaged Test Accuracy: 0.4904
+Averaged Test AUC: 0.8635
+Std Test Accuracy: 0.1777
+Std Test AUC: 0.0471
+
+--- Round 426/500 ---
+Averaged Train Loss: 1.3995
+Averaged Test Accuracy: 0.4882
+Averaged Test AUC: 0.8580
+Std Test Accuracy: 0.1663
+Std Test AUC: 0.0532
+
+--- Round 427/500 ---
+Averaged Train Loss: 1.3525
+Averaged Test Accuracy: 0.4988
+Averaged Test AUC: 0.8665
+Std Test Accuracy: 0.1635
+Std Test AUC: 0.0407
+
+--- Round 428/500 ---
+Averaged Train Loss: 1.3784
+Averaged Test Accuracy: 0.4932
+Averaged Test AUC: 0.8605
+Std Test Accuracy: 0.1412
+Std Test AUC: 0.0463
+
+--- Round 429/500 ---
+Averaged Train Loss: 1.3752
+Averaged Test Accuracy: 0.4916
+Averaged Test AUC: 0.8643
+Std Test Accuracy: 0.1803
+Std Test AUC: 0.0488
+
+--- Round 430/500 ---
+Averaged Train Loss: 1.3905
+Averaged Test Accuracy: 0.4923
+Averaged Test AUC: 0.8590
+Std Test Accuracy: 0.1623
+Std Test AUC: 0.0517
+
+--- Round 431/500 ---
+Averaged Train Loss: 1.3894
+Averaged Test Accuracy: 0.4874
+Averaged Test AUC: 0.8631
+Std Test Accuracy: 0.1819
+Std Test AUC: 0.0487
+
+--- Round 432/500 ---
+Averaged Train Loss: 1.3984
+Averaged Test Accuracy: 0.4882
+Averaged Test AUC: 0.8575
+Std Test Accuracy: 0.1684
+Std Test AUC: 0.0530
+
+--- Round 433/500 ---
+Averaged Train Loss: 1.3679
+Averaged Test Accuracy: 0.4977
+Averaged Test AUC: 0.8636
+Std Test Accuracy: 0.1510
+Std Test AUC: 0.0455
+
+--- Round 434/500 ---
+Averaged Train Loss: 1.3758
+Averaged Test Accuracy: 0.4979
+Averaged Test AUC: 0.8612
+Std Test Accuracy: 0.1641
+Std Test AUC: 0.0513
+
+--- Round 435/500 ---
+Averaged Train Loss: 1.3749
+Averaged Test Accuracy: 0.4951
+Averaged Test AUC: 0.8643
+Std Test Accuracy: 0.1705
+Std Test AUC: 0.0478
+
+--- Round 436/500 ---
+Averaged Train Loss: 1.3942
+Averaged Test Accuracy: 0.4884
+Averaged Test AUC: 0.8579
+Std Test Accuracy: 0.1470
+Std Test AUC: 0.0502
+
+--- Round 437/500 ---
+Averaged Train Loss: 1.3785
+Averaged Test Accuracy: 0.4950
+Averaged Test AUC: 0.8636
+Std Test Accuracy: 0.1753
+Std Test AUC: 0.0481
+
+--- Round 438/500 ---
+Averaged Train Loss: 1.3806
+Averaged Test Accuracy: 0.4955
+Averaged Test AUC: 0.8603
+Std Test Accuracy: 0.1608
+Std Test AUC: 0.0514
+
+--- Round 439/500 ---
+Averaged Train Loss: 1.3710
+Averaged Test Accuracy: 0.4985
+Averaged Test AUC: 0.8642
+Std Test Accuracy: 0.1737
+Std Test AUC: 0.0484
+
+--- Round 440/500 ---
+Averaged Train Loss: 1.4275
+Averaged Test Accuracy: 0.4779
+Averaged Test AUC: 0.8537
+Std Test Accuracy: 0.1683
+Std Test AUC: 0.0583
+
+--- Round 441/500 ---
+Averaged Train Loss: 1.3616
+Averaged Test Accuracy: 0.4983
+Averaged Test AUC: 0.8655
+Std Test Accuracy: 0.1629
+Std Test AUC: 0.0484
+
+--- Round 442/500 ---
+Averaged Train Loss: 1.3762
+Averaged Test Accuracy: 0.4921
+Averaged Test AUC: 0.8607
+Std Test Accuracy: 0.1451
+Std Test AUC: 0.0473
+
+--- Round 443/500 ---
+Averaged Train Loss: 1.3663
+Averaged Test Accuracy: 0.4922
+Averaged Test AUC: 0.8642
+Std Test Accuracy: 0.1546
+Std Test AUC: 0.0487
+
+--- Round 444/500 ---
+Averaged Train Loss: 1.3932
+Averaged Test Accuracy: 0.4883
+Averaged Test AUC: 0.8588
+Std Test Accuracy: 0.1493
+Std Test AUC: 0.0507
+
+--- Round 445/500 ---
+Averaged Train Loss: 1.3430
+Averaged Test Accuracy: 0.5082
+Averaged Test AUC: 0.8673
+Std Test Accuracy: 0.1476
+Std Test AUC: 0.0392
+
+--- Round 446/500 ---
+Averaged Train Loss: 1.3728
+Averaged Test Accuracy: 0.4979
+Averaged Test AUC: 0.8617
+Std Test Accuracy: 0.1596
+Std Test AUC: 0.0491
+
+--- Round 447/500 ---
+Averaged Train Loss: 1.3986
+Averaged Test Accuracy: 0.4862
+Averaged Test AUC: 0.8616
+Std Test Accuracy: 0.1827
+Std Test AUC: 0.0549
+
+--- Round 448/500 ---
+Averaged Train Loss: 1.4095
+Averaged Test Accuracy: 0.4854
+Averaged Test AUC: 0.8569
+Std Test Accuracy: 0.1586
+Std Test AUC: 0.0518
+
+--- Round 449/500 ---
+Averaged Train Loss: 1.3722
+Averaged Test Accuracy: 0.4972
+Averaged Test AUC: 0.8645
+Std Test Accuracy: 0.1682
+Std Test AUC: 0.0475
+
+--- Round 450/500 ---
+Averaged Train Loss: 1.3887
+Averaged Test Accuracy: 0.4923
+Averaged Test AUC: 0.8592
+Std Test Accuracy: 0.1554
+Std Test AUC: 0.0487
+
+--- Round 451/500 ---
+Averaged Train Loss: 1.3363
+Averaged Test Accuracy: 0.5059
+Averaged Test AUC: 0.8682
+Std Test Accuracy: 0.1570
+Std Test AUC: 0.0402
+
+--- Round 452/500 ---
+Averaged Train Loss: 1.3605
+Averaged Test Accuracy: 0.4997
+Averaged Test AUC: 0.8629
+Std Test Accuracy: 0.1369
+Std Test AUC: 0.0437
+
+--- Round 453/500 ---
+Averaged Train Loss: 1.3617
+Averaged Test Accuracy: 0.5027
+Averaged Test AUC: 0.8634
+Std Test Accuracy: 0.1581
+Std Test AUC: 0.0493
+
+--- Round 454/500 ---
+Averaged Train Loss: 1.4111
+Averaged Test Accuracy: 0.4814
+Averaged Test AUC: 0.8579
+Std Test Accuracy: 0.1703
+Std Test AUC: 0.0508
+
+--- Round 455/500 ---
+Averaged Train Loss: 1.3808
+Averaged Test Accuracy: 0.4922
+Averaged Test AUC: 0.8606
+Std Test Accuracy: 0.1536
+Std Test AUC: 0.0501
+
+--- Round 456/500 ---
+Averaged Train Loss: 1.3784
+Averaged Test Accuracy: 0.4927
+Averaged Test AUC: 0.8619
+Std Test Accuracy: 0.1646
+Std Test AUC: 0.0471
+
+--- Round 457/500 ---
+Averaged Train Loss: 1.4063
+Averaged Test Accuracy: 0.4852
+Averaged Test AUC: 0.8589
+Std Test Accuracy: 0.1771
+Std Test AUC: 0.0558
+
+--- Round 458/500 ---
+Averaged Train Loss: 1.3839
+Averaged Test Accuracy: 0.4947
+Averaged Test AUC: 0.8618
+Std Test Accuracy: 0.1728
+Std Test AUC: 0.0482
+
+--- Round 459/500 ---
+Averaged Train Loss: 1.3648
+Averaged Test Accuracy: 0.5010
+Averaged Test AUC: 0.8638
+Std Test Accuracy: 0.1584
+Std Test AUC: 0.0492
+
+--- Round 460/500 ---
+Averaged Train Loss: 1.3673
+Averaged Test Accuracy: 0.4986
+Averaged Test AUC: 0.8625
+Std Test Accuracy: 0.1584
+Std Test AUC: 0.0455
+
+--- Round 461/500 ---
+Averaged Train Loss: 1.3736
+Averaged Test Accuracy: 0.4968
+Averaged Test AUC: 0.8619
+Std Test Accuracy: 0.1595
+Std Test AUC: 0.0505
+
+--- Round 462/500 ---
+Averaged Train Loss: 1.3393
+Averaged Test Accuracy: 0.5065
+Averaged Test AUC: 0.8654
+Std Test Accuracy: 0.1485
+Std Test AUC: 0.0436
+
+--- Round 463/500 ---
+Averaged Train Loss: 1.3681
+Averaged Test Accuracy: 0.4995
+Averaged Test AUC: 0.8635
+Std Test Accuracy: 0.1663
+Std Test AUC: 0.0501
+
+--- Round 464/500 ---
+Averaged Train Loss: 1.3623
+Averaged Test Accuracy: 0.4993
+Averaged Test AUC: 0.8633
+Std Test Accuracy: 0.1583
+Std Test AUC: 0.0435
+
+--- Round 465/500 ---
+Averaged Train Loss: 1.3665
+Averaged Test Accuracy: 0.4997
+Averaged Test AUC: 0.8624
+Std Test Accuracy: 0.1467
+Std Test AUC: 0.0491
+
+--- Round 466/500 ---
+Averaged Train Loss: 1.3478
+Averaged Test Accuracy: 0.5044
+Averaged Test AUC: 0.8639
+Std Test Accuracy: 0.1342
+Std Test AUC: 0.0420
+
+--- Round 467/500 ---
+Averaged Train Loss: 1.3755
+Averaged Test Accuracy: 0.4972
+Averaged Test AUC: 0.8611
+Std Test Accuracy: 0.1490
+Std Test AUC: 0.0503
+
+--- Round 468/500 ---
+Averaged Train Loss: 1.3787
+Averaged Test Accuracy: 0.4947
+Averaged Test AUC: 0.8612
+Std Test Accuracy: 0.1672
+Std Test AUC: 0.0495
+
+--- Round 469/500 ---
+Averaged Train Loss: 1.3597
+Averaged Test Accuracy: 0.5015
+Averaged Test AUC: 0.8652
+Std Test Accuracy: 0.1691
+Std Test AUC: 0.0486
+
+--- Round 470/500 ---
+Averaged Train Loss: 1.3690
+Averaged Test Accuracy: 0.4998
+Averaged Test AUC: 0.8615
+Std Test Accuracy: 0.1543
+Std Test AUC: 0.0499
+
+--- Round 471/500 ---
+Averaged Train Loss: 1.3679
+Averaged Test Accuracy: 0.4989
+Averaged Test AUC: 0.8631
+Std Test Accuracy: 0.1698
+Std Test AUC: 0.0509
+
+--- Round 472/500 ---
+Averaged Train Loss: 1.3548
+Averaged Test Accuracy: 0.5023
+Averaged Test AUC: 0.8645
+Std Test Accuracy: 0.1580
+Std Test AUC: 0.0436
+
+--- Round 473/500 ---
+Averaged Train Loss: 1.3632
+Averaged Test Accuracy: 0.4979
+Averaged Test AUC: 0.8627
+Std Test Accuracy: 0.1490
+Std Test AUC: 0.0472
+
+--- Round 474/500 ---
+Averaged Train Loss: 1.3527
+Averaged Test Accuracy: 0.5035
+Averaged Test AUC: 0.8645
+Std Test Accuracy: 0.1491
+Std Test AUC: 0.0428
+
+--- Round 475/500 ---
+Averaged Train Loss: 1.3667
+Averaged Test Accuracy: 0.4997
+Averaged Test AUC: 0.8626
+Std Test Accuracy: 0.1657
+Std Test AUC: 0.0514
+
+--- Round 476/500 ---
+Averaged Train Loss: 1.3456
+Averaged Test Accuracy: 0.5046
+Averaged Test AUC: 0.8646
+Std Test Accuracy: 0.1492
+Std Test AUC: 0.0462
+
+--- Round 477/500 ---
+Averaged Train Loss: 1.3743
+Averaged Test Accuracy: 0.4963
+Averaged Test AUC: 0.8607
+Std Test Accuracy: 0.1503
+Std Test AUC: 0.0499
+
+--- Round 478/500 ---
+Averaged Train Loss: 1.3526
+Averaged Test Accuracy: 0.5052
+Averaged Test AUC: 0.8647
+Std Test Accuracy: 0.1555
+Std Test AUC: 0.0464
+
+--- Round 479/500 ---
+Averaged Train Loss: 1.3353
+Averaged Test Accuracy: 0.5109
+Averaged Test AUC: 0.8672
+Std Test Accuracy: 0.1424
+Std Test AUC: 0.0421
+
+--- Round 480/500 ---
+Averaged Train Loss: 1.3744
+Averaged Test Accuracy: 0.4933
+Averaged Test AUC: 0.8608
+Std Test Accuracy: 0.1515
+Std Test AUC: 0.0465
+
+--- Round 481/500 ---
+Averaged Train Loss: 1.3546
+Averaged Test Accuracy: 0.5017
+Averaged Test AUC: 0.8668
+Std Test Accuracy: 0.1815
+Std Test AUC: 0.0478
+
+--- Round 482/500 ---
+Averaged Train Loss: 1.3345
+Averaged Test Accuracy: 0.5095
+Averaged Test AUC: 0.8658
+Std Test Accuracy: 0.1508
+Std Test AUC: 0.0448
+
+--- Round 483/500 ---
+Averaged Train Loss: 1.3230
+Averaged Test Accuracy: 0.5130
+Averaged Test AUC: 0.8691
+Std Test Accuracy: 0.1562
+Std Test AUC: 0.0417
+
+--- Round 484/500 ---
+Averaged Train Loss: 1.3132
+Averaged Test Accuracy: 0.5172
+Averaged Test AUC: 0.8687
+Std Test Accuracy: 0.1222
+Std Test AUC: 0.0334
+
+--- Round 485/500 ---
+Averaged Train Loss: 1.3410
+Averaged Test Accuracy: 0.5087
+Averaged Test AUC: 0.8676
+Std Test Accuracy: 0.1486
+Std Test AUC: 0.0405
+
+--- Round 486/500 ---
+Averaged Train Loss: 1.3425
+Averaged Test Accuracy: 0.5066
+Averaged Test AUC: 0.8643
+Std Test Accuracy: 0.1362
+Std Test AUC: 0.0443
+
+--- Round 487/500 ---
+Averaged Train Loss: 1.3304
+Averaged Test Accuracy: 0.5071
+Averaged Test AUC: 0.8678
+Std Test Accuracy: 0.1445
+Std Test AUC: 0.0428
+
+--- Round 488/500 ---
+Averaged Train Loss: 1.3249
+Averaged Test Accuracy: 0.5134
+Averaged Test AUC: 0.8670
+Std Test Accuracy: 0.1374
+Std Test AUC: 0.0413
+
+--- Round 489/500 ---
+Averaged Train Loss: 1.3379
+Averaged Test Accuracy: 0.5089
+Averaged Test AUC: 0.8676
+Std Test Accuracy: 0.1628
+Std Test AUC: 0.0450
+
+--- Round 490/500 ---
+Averaged Train Loss: 1.3515
+Averaged Test Accuracy: 0.5051
+Averaged Test AUC: 0.8652
+Std Test Accuracy: 0.1575
+Std Test AUC: 0.0454
+
+--- Round 491/500 ---
+Averaged Train Loss: 1.3252
+Averaged Test Accuracy: 0.5130
+Averaged Test AUC: 0.8685
+Std Test Accuracy: 0.1509
+Std Test AUC: 0.0416
+
+--- Round 492/500 ---
+Averaged Train Loss: 1.3365
+Averaged Test Accuracy: 0.5090
+Averaged Test AUC: 0.8655
+Std Test Accuracy: 0.1309
+Std Test AUC: 0.0417
+
+--- Round 493/500 ---
+Averaged Train Loss: 1.3196
+Averaged Test Accuracy: 0.5134
+Averaged Test AUC: 0.8681
+Std Test Accuracy: 0.1322
+Std Test AUC: 0.0404
+
+--- Round 494/500 ---
+Averaged Train Loss: 1.3411
+Averaged Test Accuracy: 0.5081
+Averaged Test AUC: 0.8650
+Std Test Accuracy: 0.1449
+Std Test AUC: 0.0432
+
+--- Round 495/500 ---
+Averaged Train Loss: 1.3302
+Averaged Test Accuracy: 0.5106
+Averaged Test AUC: 0.8687
+Std Test Accuracy: 0.1541
+Std Test AUC: 0.0459
+
+--- Round 496/500 ---
+Averaged Train Loss: 1.3387
+Averaged Test Accuracy: 0.5082
+Averaged Test AUC: 0.8652
+Std Test Accuracy: 0.1467
+Std Test AUC: 0.0455
+
+--- Round 497/500 ---
+Averaged Train Loss: 1.3280
+Averaged Test Accuracy: 0.5128
+Averaged Test AUC: 0.8679
+Std Test Accuracy: 0.1391
+Std Test AUC: 0.0400
+
+--- Round 498/500 ---
+Averaged Train Loss: 1.3472
+Averaged Test Accuracy: 0.5067
+Averaged Test AUC: 0.8640
+Std Test Accuracy: 0.1524
+Std Test AUC: 0.0492
+
+--- Round 499/500 ---
+Averaged Train Loss: 1.3653
+Averaged Test Accuracy: 0.4963
+Averaged Test AUC: 0.8651
+Std Test Accuracy: 0.1750
+Std Test AUC: 0.0494
+
+--- Round 500/500 ---
+Averaged Train Loss: 1.3450
+Averaged Test Accuracy: 0.5063
+Averaged Test AUC: 0.8640
+Std Test Accuracy: 0.1566
+Std Test AUC: 0.0464
+
+========== Training Complete ==========
+Best Test Accuracy: 0.5171633847791378
+File path: ../results/Cifar10_FedEntPlusSmooth_smooth_trial01_0041_0.h5
+
+Average time cost: 1985.48s.
+Length:  501
+std for best accuracy: 0.0
+mean for best accuracy: 0.5171633847791378
+All done!
+
+Storage on cuda:0
+-------------------------------------------------------------------------------
+Total Tensors: 247747716 	Used Memory: 643.69M
+The allocated memory on cuda:0: 661.81M
+Memory differs due to the matrix alignment or invisible gradient buffer tensors
+-------------------------------------------------------------------------------

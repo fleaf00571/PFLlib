@@ -6,13 +6,14 @@ import pandas as pd # Using pandas for easier statistics summary display
 
 # --- Configuration ---
 # Set your results folder path (e.g., './results/fashionmnist')
-RESULT_DIR = 'results/'  # MODIFY THIS PATH if needed
+RESULT_DIR = '/home/ecs-user/projects/PFLlib/results/cifar100/dir0.1_0.2'  # MODIFY THIS PATH if needed
+
 
 # Specify the key for test accuracy in the H5 files
 ACC_KEY = 'rs_test_acc'
 
 # Number of final rounds to analyze
-NUM_ROUNDS_TO_ANALYZE = 20
+NUM_ROUNDS_TO_ANALYZE = 50
 # --- End Configuration ---
 
 # Function to load results (same as before)

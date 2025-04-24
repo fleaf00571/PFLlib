@@ -1,0 +1,25 @@
+{
+  "stage_info": [
+    {
+      "end_round": 80,
+      "H_min": 0.65,
+      "alpha_vp": 1.05,
+      "beta": 0.18,
+      "buffer_size": 22
+    },
+    {
+      "end_round": 315,
+      "H_min": 0.5,
+      "alpha_vp": 1.25,
+      "beta": 1.8,
+      "buffer_size": 34
+    },
+    {
+      "end_round": 500,
+      "H_min": 0.8,
+      "alpha_vp": 1.95,
+      "beta": 0.25,
+      "buffer_size": 18
+    }
+  ]
+}

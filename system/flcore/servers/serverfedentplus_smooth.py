@@ -67,7 +67,11 @@ class FedEntPlusSmooth(FedAvg):
             raise ValueError("No 'stage_info' found in config.")
 
         # 将 stage_info 按 end_fraction 升序排序
-        stage_info = sorted(stage_info, key=lambda s: s["end_fraction"])
+        stage_info = sorted(
+            stage_info,
+            key=lambda s: s.get("end_fraction",
+                        s.get("end_round") / self.global_rounds)   # 把绝对轮次归一化
+        )
 
         self.total_rounds = self.global_rounds  # 总轮数
         # 把 stage_info 转换成 [ (end_round, param_dict), ... ] 形式
@@ -75,8 +79,12 @@ class FedEntPlusSmooth(FedAvg):
         for st in stage_info:
             # 若使用 fraction => end_round = int(fraction * total_rounds)
             # 若要用绝对轮次，直接把 st["end_round"] 作为 end_round 即可
-            fraction = st["end_fraction"]
-            end_r = int(round(fraction * self.total_rounds))
+            if "end_round" in st:                # 新写法：直接绝对轮次
+                end_r = int(st["end_round"])
+            else:                                # 兼容旧写法
+                fraction = st["end_fraction"]
+                end_r = int(round(fraction * self.total_rounds))
+
             param_dict = {
                 "H_min": st["H_min"],
                 "alpha_vp": st["alpha_vp"],
