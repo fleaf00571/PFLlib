@@ -1,0 +1,48 @@
+{
+    "stage_info": [
+      {
+        "end_round": 400,
+        "strategies": [
+          {
+            "id": "entropy_priority",
+            "duration": 5,
+            "parameters": {
+              "H_min": 0.5,
+              "alpha_vp": 0.98,
+              "beta": 0.04,
+              "buffer_size": 30
+            }
+          },
+          {
+            "id": "data_priority",
+            "duration": 5,
+            "parameters": {
+              "H_min": 0,
+              "alpha_vp": 0.40,
+              "beta": 2.0,
+              "buffer_size": 30
+            }
+          }
+        ]
+      },
+      {
+        "end_round": 500,
+        "strategies": [
+          {
+            "id": "entropy_focus",
+            "duration": 100,
+            "parameters": {
+              "H_min": 0.5,
+              "alpha_vp": 0.3,
+              "beta": 0.0,
+              "buffer_size": 20
+            }
+          }
+        ]
+      }
+    ],
+    "logging": {
+      "log_strategy_change": true,
+      "log_parameter_values": true
+    }
+  }

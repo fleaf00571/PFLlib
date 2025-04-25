@@ -52,7 +52,7 @@ from flcore.servers.serveras import FedAS
 from flcore.servers.serverfedentopt import FedEntOpt
 from flcore.servers.serverfedentplus import FedEntPlus
 from flcore.servers.serverfedentplus_with_logging import FedEntPlusWithLogging 
-from flcore.servers.serverfedentplus_dynamic import FedEntPlusDynamic
+from flcore.servers.serverfedentplusdynamic import FedEntPlusDynamic
 from flcore.servers.serverfedentplus_smooth import FedEntPlusSmooth
 
 from flcore.trainmodel.models import *
@@ -367,7 +367,8 @@ def run(args):
 
         # 在算法选择逻辑中添加 FedEntPlusDynamic 分支
         elif args.algorithm == "FedEntPlusDynamic" or args.algorithm == "fedentplus_dynamic":
-            server = FedEntPlusDynamic(args, i, log_filename=args.log_filename)
+            # 初始化FedEntPlusDynamic服务器（不需要log_filename参数）
+            server = FedEntPlusDynamic(args, i)
 
         elif args.algorithm == "FedEntPlusSmooth" or args.algorithm == "fedentplus_smooth":
             # 确保 args.model 保持不变，因为 Smooth 类内部会处理
